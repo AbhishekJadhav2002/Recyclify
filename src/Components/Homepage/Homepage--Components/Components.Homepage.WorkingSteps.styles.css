@@ -1,0 +1,146 @@
+/** How it's Works section styles */
+
+.working-container {
+  min-height: 800px;
+  margin: 180px auto 0;
+  background-image: url("../Images/How-its-works-bg-clip-path.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+}
+
+.stepInTheProcess {
+  position: absolute;
+  display: inline-block;
+  padding: 20px 0 0;
+  width: 200px;
+  text-align: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center 20%;
+}
+
+.stepInTheProcess div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.7rem 0;
+  border-radius: 50%;
+  background: var(--darkish-gray_stepNo);
+  -webkit-filter: drop-shadow(6px 6px 6px var(--dark-gray-8-shadow_stepNo));
+  filter: drop-shadow(6px 6px 6px var(--dark-gray-8-shadow_stepNo));
+}
+
+.stepInTheProcess img {
+  height: 100px;
+  -webkit-object-fit: contain;
+  object-fit: contain;
+}
+
+.stepInTheProcess h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 550;
+}
+
+.step-1 {
+  left: 10%;
+}
+
+.step-2 {
+  left: 65%;
+  top: 12%;
+}
+
+.step-3 {
+  left: 40%;
+  top: 38%;
+}
+
+.step-4 {
+  left: 15%;
+  top: 60%;
+}
+
+.step-5 {
+  left: 68%;
+  top: 68%;
+}
+
+@media screen and (max-width: 1000px) {
+  .working-container {
+    margin: 10% auto 0;
+    background-image: url("../Images/How-its-works-bg-clip-path-responsive.svg");
+    background-size: calc(750px - 60vh);
+    min-height: calc(800px + 5vh);
+  }
+
+  .stepInTheProcess {
+    padding: 5px 0 0;
+    width: 30vw;
+    height: 25vh;
+    max-width: 200px;
+    max-height: 200px;
+    text-align: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center 15%;
+    font-size: 0.8rem;
+  }
+
+  .stepInTheProcess div {
+    font-size: 1rem;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.3rem 0;
+  }
+
+  .stepInTheProcess img {
+    height: 45%;
+    margin-top: 5px;
+  }
+
+  .step-1 {
+    left: 10vw;
+    top: calc(10% + 2vh);
+  }
+
+  .step-2 {
+    left: 55vw;
+    top: 15%;
+  }
+
+  .step-3 {
+    left: 35%;
+    top: 40%;
+  }
+
+  .step-4 {
+    left: 10%;
+    top: 65%;
+  }
+
+  .step-5 {
+    left: 55vw;
+    top: 68%;
+  }
+}
+
+@media (max-height: 480px) {
+  .working-container {
+    margin: 35vh auto 0;
+  }
+
+  .stepInTheProcess {
+    max-height: 200px;
+    max-width: 200px;
+    background-size: 50%;
+  }
+}
+/** How it's Works section ends */

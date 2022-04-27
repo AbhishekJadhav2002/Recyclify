@@ -1,0 +1,149 @@
+/** Why To Recycle section styles */
+
+.Y2Use-flex-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: calc((600px / 3));
+  height: 50vh;
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+}
+
+.Y2Use-flex-wrapper * {
+  border-radius: 10px;
+}
+
+.iframe-card {
+  position: absolute;
+  display: flex;
+  width: 80%;
+  height: 40%;
+  min-height: 180px;
+  background-color: var(--pri-green-3_Y2Use);
+  pointer-events: none;
+  opacity: 0;
+  transition: all ease-in;
+  -webkit-animation: animateCards 15s linear infinite;
+  animation: animateCards 15s linear infinite;
+  -webkit-animation-delay: calc(3s * var(--delay));
+  animation-delay: calc(3s * var(--delay));
+}
+
+.iframe-card > iframe {
+  max-height: 100%;
+  min-width: 40%;
+  border-radius: 10px 0 0 10px;
+}
+
+.Y2Use-flex-wrapper .iframe-card:last-child {
+  animation-delay: calc(-3s * var(--delay));
+}
+
+@keyframes animateCards {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) scale(0.5);
+  }
+  5%,
+  20% {
+    opacity: 0.4;
+    transform: translateY(100%) scale(0.7);
+  }
+  25%,
+  40% {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0%) scale(1);
+  }
+  45%,
+  60% {
+    opacity: 0.4;
+    transform: translateY(-100%) scale(0.7);
+  }
+  65%,
+  100% {
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+}
+
+.Y2Use-flex-wrapper:hover .iframe-card {
+  /* -webkit-box-shadow: 6px 8px 20px -6px #4a4a4a, -10px 7px 20px -2px #9b9b9b;
+    box-shadow: 6px 8px 20px -6px #4a4a4a, -10px 7px 20px -2px #9b9b9b; */
+  -webkit-filter: drop-shadow(0px 6px 10px var(--light-blue-6-shadow_faqCard));
+  filter: drop-shadow(0px 6px 10px var(--light-blue-6-shadow_faqCard));
+  pointer-events: all;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.iframe-card:hover h3 {
+  text-decoration: overline solid var(--dark-gray-8-shadow_stepNo) 2px;
+}
+
+.card {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.card h3 {
+  padding: 5px 0;
+}
+
+@media (max-width: 700px) {
+  .Y2Use-flex-wrapper {
+    height: auto;
+    min-height: 400px;
+    flex-direction: row;
+  }
+
+  .iframe-card {
+    width: auto;
+    max-width: 95%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .iframe-card > iframe {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  @keyframes animateCards {
+    0% {
+      opacity: 0;
+      transform: translateX(100%) scale(0.5);
+    }
+    5%,
+    20% {
+      opacity: 0.4;
+      transform: translateX(100%) scale(0.7);
+    }
+    25%,
+    40% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0%) scale(1);
+    }
+    45%,
+    60% {
+      opacity: 0.4;
+      transform: translateX(-100%) scale(0.7);
+    }
+    65%,
+    100% {
+      opacity: 0;
+      transform: translateX(-100%) scale(0.5);
+    }
+  }
+}
+/** Why To Recycle section ends */
