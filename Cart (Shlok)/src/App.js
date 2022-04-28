@@ -19,7 +19,7 @@ function App() {
   <BrowserRouter>
   <Buttons></Buttons>
   <Routes>
-        <Route path="/cart" element={orders.length!==0?<CartOrders/>:<EmptyCart/>} />
+        <Route path="/" element={orders.length!==0?<CartOrders/>:<EmptyCart/>} />
         <Route path="/orders" element={<CurrentOrders/>} />
         <Route path="/pastOrders" element={<PastOrders/>} />
       </Routes>

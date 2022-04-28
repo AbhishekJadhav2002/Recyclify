@@ -10,7 +10,7 @@ function Buttons() {
       <div className="cartButtons grid-3">
 
 <div className="button-container">
-<Link to="/cart" className='cartButton'> Cart <BsCartFill></BsCartFill></Link>
+<Link to="/" className='cartButton'> Cart <BsCartFill></BsCartFill></Link>
 </div>
 
 <div className="button-container">
