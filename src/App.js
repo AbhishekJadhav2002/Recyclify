@@ -1,12 +1,16 @@
-import React from "react"
-import "./App.css"
-import Homepage from "./Components/Homepage/Homepage"
-
+import Home from "./Profile/nav";
+import Header from "./Profile/Header";
+import PageContent from "./Profile/pageContent";
+import Footer from "./Profile/Footer"
 function App() {
-	return (
-		<React.Fragment>  {/**Using React.Fragment instead of common div, because somehow div was affecting the width of viewport and was disturbing the alignment🥲 */}
-			<Homepage />
-		</React.Fragment>
-	);
+  return (
+    <div>
+    <Home/>
+    <Header/>
+    <PageContent/>
+    <Footer/>
+    </div>
+  );
 }
+
 export default App;
