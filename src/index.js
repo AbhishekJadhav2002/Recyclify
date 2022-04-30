@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { AppProvider } from './Components/Services/context';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <App />,
+  <AppProvider >
+    <App />
+  </AppProvider >,
   document.getElementById('root')
 );
 

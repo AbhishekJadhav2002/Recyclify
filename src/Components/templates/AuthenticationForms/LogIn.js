@@ -1,5 +1,5 @@
 import React from "react"
-import { GoogleIcon } from "../../Icons"
+import { GoogleIcon } from "../Icons"
 import "./AuthenticationForms.style.component.css"
 
 function LogIn(props) {
