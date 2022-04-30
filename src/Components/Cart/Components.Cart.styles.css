@@ -126,7 +126,7 @@ background-color: var(--primary-clr);
 .empty-cart-text{
   font-size: 5rem;
   color: var(--font-clr);
-  font-family: 'Akshar', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   text-align: center;
 }
 

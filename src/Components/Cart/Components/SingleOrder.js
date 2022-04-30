@@ -2,9 +2,10 @@ import React from 'react'
 import { RiDeleteBin6Fill } from "react-icons/ri"
 import { useGlobalContext } from '../../Services/context';
 
+
 function SingleOrder(props) {
-  const { ID, PhoneNo, Address, ApproxQuantity, Img, Items, Date } = props.orders;
-  const { updateOrders, orders } = useGlobalContext();
+  const { ID, PhoneNo, Address, ApproxQuantity, Img, Items, Date } = props.cartOrders;
+  const { updateCartOrders } = useGlobalContext();
 
   return (
     <div>
@@ -23,7 +24,7 @@ function SingleOrder(props) {
         </div>
         <div className="delete-btn-container">
           <button className="orderDelete" onClick={() => {
-            updateOrders(ID)
+            updateCartOrders(ID)
           }} > <RiDeleteBin6Fill></RiDeleteBin6Fill></button>
         </div>
       </div>
