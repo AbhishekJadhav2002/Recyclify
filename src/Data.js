@@ -1,11 +1,11 @@
 export const StepsData = [
     {
-        title: "Collection",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos aliquid odio doloribus voluptates?",
+        title: "Place Order",
+        desc: "Place order from the comfort of your home",
         imgURL: "./Components/Homepage/Images/Working-step-1.jpg"
     },
     {
-        title: "Collection",
+        title: "Order Confirmation",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos aliquid odio doloribus voluptates?",
         imgURL: "./Components/Homepage/Images/Working-step-1.jpg"
     },
