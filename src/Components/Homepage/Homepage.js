@@ -34,7 +34,7 @@ function Homepage() {
             </div>
             <WorkingSteps data={StepsData} />
             <Features data={FeaturesData} />
-            <WhyToRecycle data={WhyRecycleData} />
+            {/* <WhyToRecycle data={WhyRecycleData} /> */}
             <FAQ data={FAQs} />
             <Footer data={FooterData} />
             {/* <Blob /> */}

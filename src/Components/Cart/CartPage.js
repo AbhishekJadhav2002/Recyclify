@@ -4,9 +4,9 @@ import Buttons from "./Components/Buttons"
 
 function CartPage() {
   return (
-    <React.Fragment>
+    <div className="cartPage">
       <Buttons></Buttons>
-    </React.Fragment >
+    </div>
   );
 }
 

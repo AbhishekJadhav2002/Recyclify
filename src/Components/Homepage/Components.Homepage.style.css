@@ -116,6 +116,7 @@
   display: inline-block;
   font-size: 1rem;
   font-weight: 600;
+  color: var(--light-blue-1_footer_background);
   background: var(--pri-green-6_form_fields);
   -moz-box-shadow: inset 2px 2px 5px 0px var(--pri-green-6_form_fields),
     2px 2px 5px 0px var(--pri-green-2_form_fields),

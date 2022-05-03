@@ -5,7 +5,7 @@ import Filter from './Components/Filter';
 
 function OrdersPage() {
   return (
-    <div>
+    <div className="ordersPage">
       <Filter></Filter>
       <Orders></Orders>
     </div>

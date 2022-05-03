@@ -2,14 +2,15 @@ import React from "react"
 import "./Components.Profile.styles.css"
 import Header from "./Components/Header"
 import PageContent from "./Components/PageContent"
-import Footer from "./Components/Footer"
+import Footer from "../Homepage/Homepage--Components/Footer"
+import { FooterData } from "../../Data"
 
 function Profile() {
     return (
         <React.Fragment>
             <Header />
             <PageContent />
-            <Footer />
+            <Footer data={FooterData} />
         </React.Fragment>
     )
 }

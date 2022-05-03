@@ -39,7 +39,7 @@
   transition: all 0.7s ease;
 }
 
-#navbar .nav-text .links {
+#navbar .nav-text .link {
   color: black;
   flex-direction: row;
   flex: 1 1 33.33%;

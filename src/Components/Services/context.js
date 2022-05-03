@@ -8,6 +8,7 @@ const AppProvider = ({ children }) => {
   const [cartOrders, setCartOrders] = useState(CartData);
   const [filter, setFilter] = useState('All')
   const [orders, setOrders] = useState(OrdersData)
+  const [userID, setUserID] = useState({});
 
   useEffect(() => {
     if (filter === "All") {
@@ -18,7 +19,6 @@ const AppProvider = ({ children }) => {
         return val.Type === filter;
       }))
     }
-
   }, [filter])
 
   const updateCartOrders = (id) => {
@@ -27,13 +27,17 @@ const AppProvider = ({ children }) => {
     }))
   }
 
+  const loggedInUser = (responsedUserData) => {
+    setUserID(responsedUserData)
+  }
+
   const updateFilter = (value) => {
     setFilter(value);
   }
 
   return (
     <AppContext.Provider
-      value={{ orders, cartOrders, updateCartOrders, updateFilter }}
+      value={{ userID, orders, cartOrders, updateCartOrders, updateFilter, loggedInUser }}
     >
       {children}
     </AppContext.Provider>

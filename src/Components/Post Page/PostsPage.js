@@ -3,7 +3,7 @@ import './Components.Posts.styles.css';
 
 function PostsPage() {
   return (
-    <div>
+    <div className="postsPage">
       <PostSection></PostSection>
     </div>
   )

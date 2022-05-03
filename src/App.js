@@ -18,23 +18,19 @@ function App() {
 				<Navbar />
 				<Routes>
 					<Route path="/" element={<Homepage />} />
-					<Route path="/orders" element={<OrdersPage />} />
+					<Route path="/buy" element={<OrdersPage />} />
 					<Route path="/post" element={<PostsPage />} />
-					<Route path="/cart" >
-						<Route index={true} path="/cart" element={<CartPage />} />
-						<Route path="/cart/cart-orders" element={<CartOrders />} />
-						<Route path="/cart/ordered" element={<CurrentOrders />} />
-						<Route path="/cart/past-orders" element={<PastOrders />} />
-					</Route>
+					<Route path="/complete-ordered" element={<CurrentOrders />} />
+					<Route path="/pending-orders" element={<PastOrders />} />
 					<Route path="/profile" element={<Profile />} />
 					<Route path="*" element={<h1>Error : 404</h1>} />
 				</Routes>
 			</BrowserRouter>
-			{/* <Homepage />
-			<Profile /> */}
-			{/* <OrdersPage /> */}
-			{/* <PostsPage /> */}
-			{/* <CartPage /> */}
+			{/* <Homepage /> */}
+			{/* <Profile /> */}
+			{/* <OrdersPage />
+			<PostsPage />
+			<CartPage /> */}
 		</React.Fragment>
 	);
 }

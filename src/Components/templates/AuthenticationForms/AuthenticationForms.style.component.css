@@ -129,14 +129,18 @@
   position: relative;
 }
 
-.box .inputBox input {
+.box .inputBox input,
+.box .isUserButton {
   width: 100%;
   padding: 0.625rem 10px;
   font-size: 1rem;
   letter-spacing: 0.062rem;
-  border-radius: 10px;
   outline: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-color: var(--pri-green-6_form_fields);
   caret-color: var(--pri-green-1_form_fields);
+  transition: 0.3s;
 }
 
 .box .inputBox label {
@@ -166,6 +170,12 @@
   transition: 0.3s;
 }
 
+.box .isUserButton {
+  width: 65%;
+  align-self: end;
+  transition: .3s ease-in-out;
+}
+
 .box .inputBox input:focus ~ label,
 .box .inputBox input:valid ~ label,
 .box .inputBox input:not([value=""]) ~ label {
@@ -188,18 +198,9 @@
 .box .inputBox input:focus,
 .box .inputBox input:not([value=""]) {
   outline: none;
+  box-shadow: none;
   background-color: transparent;
   border: 2px solid var(--pri-green-6_form_fields);
-}
-
-.box .inputBox .inputFilled {
-  border: 2px solid transparent;
-  background-color: var(--pri-green-6_form_fields);
-}
-
-.box .inputBox .inputNotFilled {
-  border: 2px solid var(--pri-green-6_form_fields);
-  background-color: transparent;
 }
 
 .box input[type="submit"] {
@@ -221,11 +222,12 @@
   outline: none;
 }
 
-.box input[type="submit"]:hover {
+.box input[type="submit"]:hover,
+.box .isUser {
   outline: none;
   box-shadow: none;
   background: transparent;
-  border: 3px dotted var(--pri-green-8_form_fields);
+  border: 2px dotted var(--pri-green-8_form_fields);
 }
 
 @media (max-width: 450px) {

@@ -1,11 +1,15 @@
 import React from "react"
+import { useGlobalContext } from '../../Services/context';
+import axios from "axios"
 import SignUp from "./SignUp"
 import LogIn from "./LogIn"
 import "./AuthenticationForms.style.component.css"
 
 function AuthenticationForms(props) {
+    const { loggedInUser } = useGlobalContext();
+
     const [loginDetails, setLoginDetails] = React.useState({
-        username: "",
+        email: "",
         password: ""
     })
 
@@ -13,23 +17,61 @@ function AuthenticationForms(props) {
         firstname: "",
         lastname: "",
         email: "",
-        username: "",
-        password: ""
+        phone: "",
+        password: "",
+        isUser: true
     })
 
     const [isSignUp, setIsSignIn] = React.useState(true)
 
+    // React.useEffect(() => {
+
+    // }, [])
+
+    async function postDetailsToAPI() {
+        if (isSignUp) {
+            try {
+                const response = await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/auth/signup", JSON.stringify(signUpDetails), {
+                    headers: {
+                        "Content-Type": "application/JSON",
+                    }
+                })
+                loggedInUser(response.data)
+                localStorage.setItem("userLoginKey", response.data.token);
+            } catch (error) {
+                console.log(error)
+            }
+        } else {
+            try {
+                const response = await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/auth/login", JSON.stringify(loginDetails), {
+                    headers: {
+                        "Content-Type": "application/JSON",
+                    }
+                })
+                loggedInUser(response.data)
+                localStorage.setItem("userLoginKey", response.data.token);
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
+
     function handleSubmit(event) {
-        console.log(signUpDetails, loginDetails)
+        postDetailsToAPI()
         event.preventDefault();
     }
 
     function handleInputFields(event) {
         isSignUp ?
             setSignUpDetails(prevState => {
+                let isUser = signUpDetails.isUser;
+                if (event.target.name === "isUser") {
+                    isUser = !signUpDetails.isUser;
+                }
                 return {
                     ...prevState,
-                    [event.target.name]: event.target.value
+                    [event.target.name]: event.target.value,
+                    "isUser": isUser
                 }
             })
             :
@@ -39,7 +81,6 @@ function AuthenticationForms(props) {
                     [event.target.name]: event.target.value
                 }
             })
-
     }
 
     function toggleSignUpLoginModal(event) {
