@@ -20,7 +20,7 @@ function App() {
 					<Route path="/" element={<Homepage />} />
 					<Route path="/buy" element={<OrdersPage />} />
 					<Route path="/post" element={<PostsPage />} />
-					<Route path="/complete-ordered" element={<CurrentOrders />} />
+					<Route path="/complete-orders" element={<CurrentOrders />} />
 					<Route path="/pending-orders" element={<PastOrders />} />
 					<Route path="/profile" element={<Profile />} />
 					<Route path="*" element={<h1>Error : 404</h1>} />

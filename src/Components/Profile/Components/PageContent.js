@@ -1,6 +1,7 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
-function PageContent() {
+function PageContent(props) {
     return (
         <div className="profile-details-container">
             <div className="profile-details-flex">
@@ -28,13 +29,13 @@ function PageContent() {
                             </div>
                             <div className="profile-card-body-fields">
                                 <h3>
-                                    Abhijeet Ingle<span>, 19</span>
+                                    {props.data.firstname + " " + props.data.lastname}<span>, 19</span>
                                 </h3>
-                                <h5>Pune, Maharashtra</h5>
-                                <h5 className="userType">Individual</h5>
-                                <div>Pune Institute of Computer Technology</div>
+                                <h5>{props.data.city}</h5>
+                                <h5 className="userType">{props.data.userType === "user" ? "INDIVIDUAL" : "COLLECTOR"}</h5>
+                                <div>{props.data.userType === "user" ? props.data.city : props.data.company + " " + props.data.city}</div>
                                 <hr />
-                                <a href="#">My Orders</a>
+                                <Link to="/complete-orders">My Orders</Link>
                             </div>
                         </div>
                     </div>
@@ -52,21 +53,21 @@ function PageContent() {
                         <div className="profile-row">
                             <div className="profile-detailed-view-body-field">
                                 <label>Name</label>
-                                <p>Abhijeet Ingle</p>
+                                <p>{props.data.firstname + " " + props.data.lastname}</p>
                             </div>
                             <div className="profile-detailed-view-body-field">
                                 <label>Email address</label>
-                                <p>abhijeet171202@gmail.com</p>
+                                <p>{props.data.email}</p>
                             </div>
                         </div>
                         <div className="profile-row">
                             <div className="profile-detailed-view-body-field">
                                 <label>Phone Number</label>
-                                <p>9876543210</p>
+                                <p>{props.data.phone}</p>
                             </div>
                             <div className="profile-detailed-view-body-field">
                                 <label>Type</label>
-                                <p>Individual</p>
+                                <p>{props.data.userType.toUpperCase()}</p>
                             </div>
                         </div>
                         <hr />
@@ -76,7 +77,7 @@ function PageContent() {
                         <div className="profile-row">
                             <div className="profile-detailed-view-body-field address-field">
                                 <label>Address</label>
-                                <p>Room no 207, PICT Hostel,PICT, 3 Trimurti Chowk Road,  Dhankawadi, Pune 411043</p>
+                                <p>{props.data.address}</p>
                             </div>
                         </div>
                         <div className="profile-row">
@@ -90,7 +91,7 @@ function PageContent() {
                             </div>
                             <div className="profile-detailed-view-body-field">
                                 <label>City</label>
-                                <p>Pune</p>
+                                <p>{props.data.city}</p>
                             </div>
                             <div className="profile-detailed-view-body-field">
                                 <label>Postal code</label>

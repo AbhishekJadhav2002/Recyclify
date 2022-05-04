@@ -40,14 +40,14 @@ function SignIn(props) {
                 </div>
                 <div className="inputBox">
                     <input
-                        type="tel"
-                        name="phone"
-                        id="phone"
+                        type="text"
+                        name="city"
+                        id="city"
                         required
                         autoComplete="autoComplete_off_randomString"
                         onChange={props.handleInputFields}
-                        value={props.userDetails.phone} />
-                    <label htmlFor="phone">Phone No.</label>
+                        value={props.userDetails.city} />
+                    <label htmlFor="city">City</label>
                 </div>
                 <div className="inputBox">
                     <input
@@ -67,7 +67,7 @@ function SignIn(props) {
                         <p>Sign in with Google</p>
                     </a>
                 </div> */}
-                <button name="isUser" onClick={props.handleInputFields} className={!props.userDetails.isUser ? "isUserButton" : "isUserButton isUser"} value="Joining as a User ?" >Joining as a Recycler ?</button>
+                <button name="isUser" onClick={props.handleInputFields} className={!props.userDetails.isUser ? "isUserButton" : "isUserButton isUser"} value="Joining as a Recycler ?" >Joining as a Recycler ?</button>
                 <input type="submit" name="sign-un" value="Sign Up" />
             </form>
         </React.Fragment>

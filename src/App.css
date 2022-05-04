@@ -70,6 +70,10 @@ html {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 .iconsBar {
   position: relative;
   width: 100%;

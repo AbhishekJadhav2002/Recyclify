@@ -4,10 +4,10 @@ import axios from "axios"
 import imgUrl from "../Images/recycle.png"
 
 function PostSection() {
-  const { userID } = useGlobalContext();
+  const { userObject } = useGlobalContext();
 
   const [order, setOrder] = React.useState({
-    userId: [userID],
+    userId: [userObject._id],
     productType: "",
     items: "",
     quantity: "0",

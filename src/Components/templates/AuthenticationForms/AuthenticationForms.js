@@ -17,7 +17,7 @@ function AuthenticationForms(props) {
         firstname: "",
         lastname: "",
         email: "",
-        phone: "",
+        city: "",
         password: "",
         isUser: true
     })
@@ -36,8 +36,7 @@ function AuthenticationForms(props) {
                         "Content-Type": "application/JSON",
                     }
                 })
-                loggedInUser(response.data)
-                localStorage.setItem("userLoginKey", response.data.token);
+                loggedInUser(response)
             } catch (error) {
                 console.log(error)
             }
@@ -48,8 +47,8 @@ function AuthenticationForms(props) {
                         "Content-Type": "application/JSON",
                     }
                 })
-                loggedInUser(response.data)
-                localStorage.setItem("userLoginKey", response.data.token);
+                loggedInUser(response)
+                console.log(localStorage.getItem("userObjectStored"))
             } catch (error) {
                 console.log(error)
             }

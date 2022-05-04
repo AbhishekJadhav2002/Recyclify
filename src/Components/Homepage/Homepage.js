@@ -1,5 +1,7 @@
 import React from "react"
 import "./Components.Homepage.style.css"
+import { useGlobalContext } from "../Services/context"
+import { Link } from "react-router-dom"
 import { StepsData, FeaturesData, WhyRecycleData, FAQs, FooterData } from "../../Data"
 import AuthenticationForms from '../templates/AuthenticationForms/AuthenticationForms'
 import WorkingSteps from "./Homepage--Components/WorkingSteps"
@@ -11,7 +13,15 @@ import Footer from "./Homepage--Components/Footer"
 function Homepage() {
     const [authenticationModal, setSignUpState] = React.useState(false)
 
-    const [isLoggedIn, setIsLoggedin] = React.useState(false)
+    const { userObject } = useGlobalContext()
+
+    const [isLoggedIn, setIsLogin] = React.useState(false)
+
+    React.useEffect(() => {
+        setIsLogin(userObject === null ? false : true)
+        console.log(userObject)
+    }, [userObject])
+
 
     function toggleModal() {
         setSignUpState(previousState => !previousState)
@@ -26,7 +36,7 @@ function Homepage() {
                     <h1 className="willChange">Plastic and E-waste Recycling Services</h1>
                     <p>Upload your household waste and get them exchanged with a worthwhile amount from a collector who will ensure a environment friendly recycling.</p>
                     {isLoggedIn ?
-                        <button className="btn" data-hover="Buy / Sell"><div><a href="/sell-buy">Let's Start</a></div></button> :
+                        <button className="btn"><Link to={userObject.userType === "user" ? "/post" : "/buy"}>Let's Start</Link></button> :
                         <button className="btn" onClick={() => toggleModal()} data-hover="Login / Sign In"><div>Get Started</div></button>
                     }
                 </div>

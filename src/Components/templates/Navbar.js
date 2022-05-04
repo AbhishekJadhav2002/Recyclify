@@ -11,7 +11,7 @@ function Navbar() {
                 <section className="nav-text">
                     <Link className="link" to="/">Homepage</Link>
                     <Link className="link" to="/post">Sell</Link>
-                    <Link className="link" to="/complete">Cart</Link>
+                    <Link className="link" to="/buy">Buy</Link>
                     <Link className="link" to="/profile">Profile</Link>
                 </section>
                 <section id="trapezoid">
