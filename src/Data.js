@@ -1,27 +1,27 @@
 export const StepsData = [
     {
+        title: "Want to get rid off your plastic waste?",
+        desc: "Visit our website and give the information of the type of waste, your details etc.",
+        imgURL: "./Components/Homepage/Images/Working-step-1.jpg"
+    },
+    {
         title: "Place Order",
         desc: "Place order from the comfort of your home",
         imgURL: "./Components/Homepage/Images/Working-step-1.jpg"
     },
     {
         title: "Order Confirmation",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos aliquid odio doloribus voluptates?",
+        desc: "Your Order is confirmed by a collector near you.",
         imgURL: "./Components/Homepage/Images/Working-step-1.jpg"
     },
     {
         title: "Collection",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos aliquid odio doloribus voluptates?",
+        desc: "Collector collects the waste from your doorstep",
         imgURL: "./Components/Homepage/Images/Working-step-1.jpg"
     },
     {
-        title: "Collection",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos aliquid odio doloribus voluptates?",
-        imgURL: "./Components/Homepage/Images/Working-step-1.jpg"
-    },
-    {
-        title: "Collection",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos aliquid odio doloribus voluptates?",
+        title: "Green Earth",
+        desc: "By using our platform you help in managing the waste to a large extend and thus contribute in reducing the waste accumulation",
         imgURL: "./Components/Homepage/Images/Working-step-1.jpg"
     }
 ]
@@ -29,18 +29,18 @@ export const StepsData = [
 export const FeaturesData = [
     {
         id: "0",
-        title: "Login and Sign Up",
-        desc: "Sign up using a login credentials"
+        title: "Hassle free order placing",
+        desc: "Place your order easily on our website with just a few steps."
     },
     {
         id: "1",
-        title: "Login and Sign Up",
-        desc: "Sign up using a login credentials"
+        title: "Doorstep Collection",
+        desc: "Collectors will collect the waste from your doorstep."
     },
     {
         id: "2",
-        title: "Login and Sign Up",
-        desc: "Sign up using a login credentials"
+        title: "Online Payment",
+        desc: "Perform Online Transactions by using our secure payment gateway."
         // },
         // {
         //     id: "3",
@@ -123,7 +123,7 @@ export const FAQs = [
 ]
 
 export const FooterData = {
-    aboutProject: "Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.",
+    aboutProject: "To encourage and develop an efficient and eco-friendly recycling model, for which we're looking to connect the customers(donors) to the recyclers along with the worthwhile exchange of money between them.",
     phoneNumber: "7030405299",
     email: "support@pbl.com",
     links: {
