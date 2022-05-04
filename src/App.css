@@ -26,6 +26,7 @@
   --light-blue_buttons: rgba(144, 218, 255, 0.65);
   --neon-blue_sticks: rgba(0, 255, 255, 1);
   --blue-links: rgb(17, 91, 251);
+  --dark-blue-links: rgb(94, 114, 228);
 }
 
 *::selection {

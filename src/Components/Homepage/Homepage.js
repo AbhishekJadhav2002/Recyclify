@@ -1,7 +1,6 @@
 import React from "react"
 import "./Components.Homepage.style.css"
 import { StepsData, FeaturesData, WhyRecycleData, FAQs, FooterData } from "../../Data"
-import { ArrowDown } from "../Icons"
 import AuthenticationForms from '../templates/AuthenticationForms/AuthenticationForms'
 import WorkingSteps from "./Homepage--Components/WorkingSteps"
 import Features from "./Homepage--Components/Features"
@@ -21,17 +20,6 @@ function Homepage() {
     return (
         <div id="Home" className="homepage">
             {authenticationModal && <AuthenticationForms onButtonClick={() => toggleModal()} />}
-            <div className="blur-nav"></div>
-            <nav id="navbar">
-                <section className="nav-text">
-                    <a href="#Home">Home</a>
-                    <a href="#Sell">Sell/Order</a>
-                    <a href="#Profile">Profile</a>
-                </section>
-                <section id="trapezoid">
-                    <ArrowDown className="show-menu" />
-                </section>
-            </nav>
             <div className="header-container">
                 <div className="header-background"></div>
                 <div className="header-content">
@@ -46,7 +34,7 @@ function Homepage() {
             </div>
             <WorkingSteps data={StepsData} />
             <Features data={FeaturesData} />
-            <WhyToRecycle data={WhyRecycleData} />
+            {/* <WhyToRecycle data={WhyRecycleData} /> */}
             <FAQ data={FAQs} />
             <Footer data={FooterData} />
             {/* <Blob /> */}
