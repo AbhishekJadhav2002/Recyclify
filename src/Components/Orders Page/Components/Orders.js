@@ -18,19 +18,14 @@ function Orders() {
             "Content-Type": "application/JSON",
           }
         })
-      console.log(id)
-      console.log(userObject)
     } catch (error) {
       console.log(error)
     }
-
     let newOrder = orders.filter((val) => {
-
       return val._id !== id;
     })
     updateOrders(newOrder)
   }
-
 
   React.useEffect(() => {
     async function getOrdersFromAPI() {
@@ -51,7 +46,6 @@ function Orders() {
     getOrdersFromAPI();
   }, [])
 
-  console.log(orders)
   return (
     <div>
       {orders.map((val) => {

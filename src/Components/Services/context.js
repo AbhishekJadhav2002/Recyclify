@@ -9,6 +9,7 @@ const AppProvider = ({ children }) => {
   const [cartOrders, setCartOrders] = useState(CartData);
   const [filter, setFilter] = useState('All')
   const [orders, setOrders] = useState([])
+  const [pastOrders, setPastOrders] = useState([])
 
   // useEffect(() => {
   //   if (filter === "All") {
@@ -34,9 +35,13 @@ const AppProvider = ({ children }) => {
     }))
   }
 
-  const loggedInUser = (responsedUserData) => {
+  const setLoggedInUser = (responsedUserData) => {
     setUser(responsedUserData.data)
     localStorage.setItem("userObjectStored", JSON.stringify(responsedUserData.data));
+  }
+
+  const logOut = () => {
+    localStorage.clear();
   }
 
   const updateFilter = (value) => {
@@ -47,9 +52,13 @@ const AppProvider = ({ children }) => {
     setOrders(value);
   }
 
+  const updatePastOrders = (value) => {
+    setPastOrders(value);
+  }
+
   return (
     <AppContext.Provider
-      value={{ userObject, orders, updateOrders, cartOrders, updateCartOrders, updateFilter, loggedInUser }}
+      value={{ userObject, logOut, orders, updateOrders, pastOrders, updatePastOrders, cartOrders, updateCartOrders, updateFilter, setLoggedInUser }}
     >
       {children}
     </AppContext.Provider>

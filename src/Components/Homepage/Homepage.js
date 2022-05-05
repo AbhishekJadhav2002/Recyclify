@@ -19,7 +19,6 @@ function Homepage() {
 
     React.useEffect(() => {
         setIsLogin(userObject === null ? false : true)
-        console.log(userObject)
     }, [userObject])
 
 
@@ -29,14 +28,14 @@ function Homepage() {
 
     return (
         <div id="Home" className="homepage">
-            {authenticationModal && <AuthenticationForms onButtonClick={() => toggleModal()} />}
+            {(!isLoggedIn && authenticationModal) && <AuthenticationForms onButtonClick={() => toggleModal()} />}
             <div className="header-container">
                 <div className="header-background"></div>
                 <div className="header-content">
                     <h1 className="willChange">Plastic and E-waste Recycling Services</h1>
                     <p>Upload your household waste and get them exchanged with a worthwhile amount from a collector who will ensure a environment friendly recycling.</p>
                     {isLoggedIn ?
-                        <button className="btn"><Link to={userObject.userType === "user" ? "/post" : "/buy"}>Let's Start</Link></button> :
+                        <button className="btn"><Link to={userObject.userType === "user" ? "/sell" : "/buy"}>Let's Start</Link></button> :
                         <button className="btn" onClick={() => toggleModal()} data-hover="Login / Sign In"><div>Get Started</div></button>
                     }
                 </div>

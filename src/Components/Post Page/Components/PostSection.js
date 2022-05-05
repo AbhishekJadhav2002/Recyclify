@@ -12,7 +12,8 @@ function PostSection() {
     items: "",
     quantity: "0",
     address: "",
-    city: ""
+    city: "",
+    phone: [userObject.phone]
   })
 
   async function postDetailsToAPI() {

@@ -8,24 +8,24 @@ function SignIn(props) {
                 <div className="inputBox">
                     <input
                         type="text"
-                        name="firstname"
-                        id="firstname"
+                        name="name"
+                        id="name"
                         required
                         autoComplete="autoComplete_off_randomString"
                         onChange={props.handleInputFields}
-                        value={props.userDetails.firstname} />
-                    <label htmlFor="firstname">First Name</label>
+                        value={props.userDetails.name} />
+                    <label htmlFor="name">Name</label>
                 </div>
                 <div className="inputBox">
                     <input
-                        type="text"
-                        name="lastname"
-                        id="lastname"
+                        type="tel"
+                        name="phone"
+                        id="phone"
                         required
                         autoComplete="autoComplete_off_randomString"
                         onChange={props.handleInputFields}
-                        value={props.userDetails.lastname} />
-                    <label htmlFor="lastname">Last Name</label>
+                        value={props.userDetails.phone} />
+                    <label htmlFor="phone">Phone No</label>
                 </div>
                 <div className="inputBox" id="emailContainer">
                     <input

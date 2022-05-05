@@ -1,13 +1,14 @@
+import React from "react"
 import { useGlobalContext } from '../../Services/context';
 // import SingleOrder from './SingleOrder';
 import SinglePastOrder from "./SinglePastOrder"
 
 function PastOrders() {
-  const { orders } = useGlobalContext();
+  const { pastOrders } = useGlobalContext();
 
   return (
     <div className='grid-2'>
-      {orders.map((val) => {
+      {pastOrders.map((val) => {
         return (
           <div key={val.ID}>
             <SinglePastOrder orders={val}></SinglePastOrder>

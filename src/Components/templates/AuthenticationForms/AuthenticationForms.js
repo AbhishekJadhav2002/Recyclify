@@ -6,7 +6,7 @@ import LogIn from "./LogIn"
 import "./AuthenticationForms.style.component.css"
 
 function AuthenticationForms(props) {
-    const { loggedInUser } = useGlobalContext();
+    const { setLoggedInUser } = useGlobalContext();
 
     const [loginDetails, setLoginDetails] = React.useState({
         email: "",
@@ -14,8 +14,8 @@ function AuthenticationForms(props) {
     })
 
     const [signUpDetails, setSignUpDetails] = React.useState({
-        firstname: "",
-        lastname: "",
+        name: "",
+        phone:"",
         email: "",
         city: "",
         password: "",
@@ -23,10 +23,6 @@ function AuthenticationForms(props) {
     })
 
     const [isSignUp, setIsSignIn] = React.useState(true)
-
-    // React.useEffect(() => {
-
-    // }, [])
 
     async function postDetailsToAPI() {
         if (isSignUp) {
@@ -36,7 +32,7 @@ function AuthenticationForms(props) {
                         "Content-Type": "application/JSON",
                     }
                 })
-                loggedInUser(response)
+                setLoggedInUser(response)
             } catch (error) {
                 console.log(error)
             }
@@ -47,7 +43,7 @@ function AuthenticationForms(props) {
                         "Content-Type": "application/JSON",
                     }
                 })
-                loggedInUser(response)
+                setLoggedInUser(response)
                 console.log(localStorage.getItem("userObjectStored"))
             } catch (error) {
                 console.log(error)

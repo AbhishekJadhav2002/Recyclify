@@ -1,14 +1,35 @@
 import React from 'react'
+import axios from 'axios'
 import { useGlobalContext } from '../../Services/context';
-// import SingleOrder from './SingleOrder';
 import SingleCurrentOrder from "./SingleCurrentOrder"
 
 function CurrentOrders() {
-  const { orders } = useGlobalContext();
+  const { userObject, pastOrders, updatePastOrders } = useGlobalContext();
+
+  React.useEffect(() => {
+    async function getPastOrdersFromAPI() {
+      try {
+        const userPastOrders =
+          await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/order/userOrders", JSON.stringify({
+            userID: userObject._id,
+          }), {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            }
+          })
+        // const userPastOrders =
+        //   await axios.get("https://sleepy-oasis-89356.herokuapp.com/api/order/userOrders")
+        updatePastOrders(userPastOrders.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getPastOrdersFromAPI();
+  }, [])
 
   return (
     <div className='grid-2'>
-      {orders.map((val) => {
+      {pastOrders.map((val) => {
         return (
           <div key={val.ID}>
             <SingleCurrentOrder orders={val}></SingleCurrentOrder>
