@@ -18,7 +18,7 @@ function SignIn(props) {
                 </div>
                 <div className="inputBox">
                     <input
-                        type="tel"
+                        type="text"
                         name="phone"
                         id="phone"
                         required

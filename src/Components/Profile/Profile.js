@@ -29,7 +29,7 @@ function Profile() {
                     <Footer data={FooterData} />
                 </>
                 :
-                <AuthenticationForms />
+                <AuthenticationForms previousRoute={"/profile"}/>
             }
         </React.Fragment>
     )

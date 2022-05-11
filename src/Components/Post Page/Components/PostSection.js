@@ -2,6 +2,8 @@ import React from 'react'
 import { useGlobalContext } from "../../Services/context"
 import axios from "axios"
 import imgUrl from "../Images/recycle.png"
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function PostSection() {
   const { userObject } = useGlobalContext();
@@ -13,8 +15,10 @@ function PostSection() {
     quantity: "0",
     address: "",
     city: "",
-    phone: [userObject.phone]
+    phone: userObject.phone
   })
+
+  let toastID;
 
   async function postDetailsToAPI() {
     try {
@@ -23,17 +27,17 @@ function PostSection() {
           "Content-Type": "application/JSON",
         }
       })
-      console.log(response)
+      setTimeout(() => { setOrder(order) }, 800)
+      toast.update(toastID, { render: "Successfully posted order !", type: "success", isLoading: false, autoClose: "800" })
     } catch (error) {
       console.log(error)
     }
   }
 
   function HandlePostOrder(event) {
-    setOrder(order)
     event.preventDefault()
+    toastID = toast.loading("Posting request...")
     postDetailsToAPI()
-    console.log(order)
   }
 
   function onFieldsChange(event) {
@@ -47,6 +51,7 @@ function PostSection() {
     <>
       <div className="grid-2">
         <div className="img-container">
+          <ToastContainer />
           <img src={imgUrl} alt="" className="form-img" />
         </div>
         <div>

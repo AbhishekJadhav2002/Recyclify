@@ -29,7 +29,7 @@ function PageContent(props) {
                             </div>
                             <div className="profile-card-body-fields">
                                 <h3>
-                                    {props.data.firstname + " " + props.data.lastname}<span>, 19</span>
+                                    {props.data.name}<span>, 19</span>
                                 </h3>
                                 <h5>{props.data.city}</h5>
                                 <h5 className="userType">{props.data.userType === "user" ? "INDIVIDUAL" : "COLLECTOR"}</h5>
@@ -53,7 +53,7 @@ function PageContent(props) {
                         <div className="profile-row">
                             <div className="profile-detailed-view-body-field">
                                 <label>Name</label>
-                                <p>{props.data.firstname + " " + props.data.lastname}</p>
+                                <p>{props.data.name}</p>
                             </div>
                             <div className="profile-detailed-view-body-field">
                                 <label>Email address</label>

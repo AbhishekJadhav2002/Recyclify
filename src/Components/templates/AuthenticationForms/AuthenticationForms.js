@@ -1,9 +1,11 @@
 import React from "react"
 import { useGlobalContext } from '../../Services/context';
+import "./AuthenticationForms.style.component.css"
 import axios from "axios"
 import SignUp from "./SignUp"
 import LogIn from "./LogIn"
-import "./AuthenticationForms.style.component.css"
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function AuthenticationForms(props) {
     const { setLoggedInUser } = useGlobalContext();
@@ -15,7 +17,7 @@ function AuthenticationForms(props) {
 
     const [signUpDetails, setSignUpDetails] = React.useState({
         name: "",
-        phone:"",
+        phone: "",
         email: "",
         city: "",
         password: "",
@@ -23,6 +25,8 @@ function AuthenticationForms(props) {
     })
 
     const [isSignUp, setIsSignIn] = React.useState(true)
+
+    let toastID;
 
     async function postDetailsToAPI() {
         if (isSignUp) {
@@ -33,7 +37,9 @@ function AuthenticationForms(props) {
                     }
                 })
                 setLoggedInUser(response)
+                console.log(response)
             } catch (error) {
+                toast.update(toastID, { render: error.response.data.msg, type: "fail", isLoading: false })
                 console.log(error)
             }
         } else {
@@ -43,20 +49,24 @@ function AuthenticationForms(props) {
                         "Content-Type": "application/JSON",
                     }
                 })
-                setLoggedInUser(response)
-                console.log(localStorage.getItem("userObjectStored"))
+                setTimeout(() => { setLoggedInUser(response) }, 800)
+                toast.update(toastID, { render: "Successfully authenticated !", type: "success", isLoading: false })
+                console.log(response.data)
             } catch (error) {
+                toast.update(toastID, { render: error.response.data.msg, type: "fail", isLoading: false })
                 console.log(error)
             }
         }
     }
 
     function handleSubmit(event) {
+        toastID = toast.loading("Authenticating...")
         postDetailsToAPI()
         event.preventDefault();
     }
 
     function handleInputFields(event) {
+        console.log(event.target.value);
         isSignUp ?
             setSignUpDetails(prevState => {
                 let isUser = signUpDetails.isUser;
@@ -98,6 +108,7 @@ function AuthenticationForms(props) {
             <button className="modalCloseButton" onClick={props.onButtonClick}></button>
             <div className="authenticationContainer">
                 <div className="modalBackground"></div>
+                <ToastContainer />
                 <div className={isSignUp ? "modal modalForSignUpForm" : "modal"}>
                     <div className="heading">
                         <h2>Hey! Welcome to the better place 🙌</h2>

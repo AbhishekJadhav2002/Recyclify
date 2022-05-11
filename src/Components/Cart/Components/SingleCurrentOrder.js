@@ -1,9 +1,10 @@
 import React from 'react'
 // import { useGlobalContext } from '../../context';
+import Img from "../../Orders Page/Components/ireland.jpeg"
 
 function SingleCurrentOrder(props) {
   // const { updateOrders, orders } = useGlobalContext();
-  const { PhoneNo, Address, ApproxQuantity, Img, Items, OrderedDate } = props.orders;
+  const { phone, address, quantity, items, date } = props.orders;
 
   return (
     <div>
@@ -13,13 +14,13 @@ function SingleCurrentOrder(props) {
         </div>
         <div className="order-data">
           <div className="orderItems">
-            <span className="green"> Items:</span>{Items}</div>
+            <span className="green"> Items:</span>{items}</div>
           <div className="orderAddress">
-            <span className="green"> Address:</span>{Address}</div>
+            <span className="green"> Address:</span>{address}</div>
           <div className="orderPhone">
-            <span className="green"> Phone Number:</span> {PhoneNo}</div>
-          <div className="orderDate"><span className='green'> Ordered On:</span>{OrderedDate}</div>
-          <div className="orderQuantity"><span className="green">Quantity:</span> {ApproxQuantity}</div>
+            <span className="green"> Phone Number:</span> {phone}</div>
+          <div className="orderDate"><span className='green'> Ordered On:</span>{date}</div>
+          <div className="orderQuantity"><span className="green">Quantity:</span> {quantity}</div>
         </div>
         <div className="delete-btn-container">
         </div>

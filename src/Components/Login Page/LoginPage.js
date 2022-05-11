@@ -11,7 +11,7 @@ function LoginPage(props) {
     React.useEffect(() => {
         if (userObject !== null) {
             if (redirectToHome) {
-                redirectToHome('/')
+                redirectToHome(props.previousLink ? props.previousLink : "/")
             }
         }
     })

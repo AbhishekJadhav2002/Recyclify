@@ -117,6 +117,14 @@
   text-align: center;
 }
 
+.empty-cart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 100vw;
+}
+
 .empty-cart-icon {
   color: var(--primary-clr);
   font-size: 5rem;
