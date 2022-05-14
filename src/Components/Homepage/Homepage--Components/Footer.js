@@ -1,6 +1,6 @@
 import React from "react"
 import "./Components.Homepage.Footer.styles.css"
-import { CollegeLocationIcon, ContactPhoneIcon, EmailIcon, InstagramIcon, LinkedinIcon, GitHubIcon, ProjectReportIcon } from "../../Icons"
+import { CollegeLocationIcon, ContactPhoneIcon, EmailIcon, InstagramIcon, LinkedinIcon, GitHubIcon, ProjectReportIcon } from "../../templates/Icons"
 
 function Footer(props) {
     return (

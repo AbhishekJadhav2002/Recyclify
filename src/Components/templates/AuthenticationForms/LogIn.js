@@ -1,5 +1,4 @@
 import React from "react"
-import { GoogleIcon } from "../../Icons"
 import "./AuthenticationForms.style.component.css"
 
 function LogIn(props) {
@@ -8,14 +7,14 @@ function LogIn(props) {
             <form className="box" onSubmit={props.handleSubmit}>
                 <div className="inputBox">
                     <input
-                        className={props.userDetails.username === "" ? "inputFilled" : "inputNotFilled"}
-                        type="username"
-                        name="username"
-                        id="username"
+                        className={props.userDetails.email === "" ? "inputFilled" : "inputNotFilled"}
+                        type="email"
+                        name="email"
+                        id="email"
                         required
                         onChange={props.handleInputFields}
-                        value={props.userDetails.username} />
-                    <label htmlFor="username">Username</label>
+                        value={props.userDetails.email} />
+                    <label htmlFor="username">Email</label>
                 </div>
                 <div className="inputBox">
                     <input
@@ -29,13 +28,13 @@ function LogIn(props) {
                     <label htmlFor="password">Password</label>
                     <a href="./log-in/forgot-password">Forgot Password ?</a>
                 </div>
-                <div className="iconsBar iconsBar-black-line">
+                {/* <div className="iconsBar iconsBar-black-line">
                     <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin">
                         <GoogleIcon className="willChange" />
-                        {/* <i className="fab fa-google"></i> */}
+                        <i className="fab fa-google"></i>
                         <p>Log in with Google</p>
                     </a>
-                </div>
+                </div> */}
                 <input type="submit" name="log-in" value="Log In" />
             </form>
         </React.Fragment>

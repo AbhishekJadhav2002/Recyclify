@@ -1,7 +1,8 @@
 import React from "react"
 import "./Components.Homepage.style.css"
+import { useGlobalContext } from "../Services/context"
+import { Link } from "react-router-dom"
 import { StepsData, FeaturesData, WhyRecycleData, FAQs, FooterData } from "../../Data"
-import { ArrowDown } from "../Icons"
 import AuthenticationForms from '../templates/AuthenticationForms/AuthenticationForms'
 import WorkingSteps from "./Homepage--Components/WorkingSteps"
 import Features from "./Homepage--Components/Features"
@@ -12,7 +13,14 @@ import Footer from "./Homepage--Components/Footer"
 function Homepage() {
     const [authenticationModal, setSignUpState] = React.useState(false)
 
-    const [isLoggedIn, setIsLoggedin] = React.useState(false)
+    const { userObject } = useGlobalContext()
+
+    const [isLoggedIn, setIsLogin] = React.useState(false)
+
+    React.useEffect(() => {
+        setIsLogin(userObject === null ? false : true)
+    }, [userObject])
+
 
     function toggleModal() {
         setSignUpState(previousState => !previousState)
@@ -20,25 +28,14 @@ function Homepage() {
 
     return (
         <div id="Home" className="homepage">
-            {authenticationModal && <AuthenticationForms onButtonClick={() => toggleModal()} />}
-            <div className="blur-nav"></div>
-            <nav id="navbar">
-                <section className="nav-text">
-                    <a href="#Home">Home</a>
-                    <a href="#Sell">Sell/Order</a>
-                    <a href="#Profile">Profile</a>
-                </section>
-                <section id="trapezoid">
-                    <ArrowDown className="show-menu" />
-                </section>
-            </nav>
+            {(!isLoggedIn && authenticationModal) && <AuthenticationForms onButtonClick={() => toggleModal()} />}
             <div className="header-container">
                 <div className="header-background"></div>
                 <div className="header-content">
                     <h1 className="willChange">Plastic and E-waste Recycling Services</h1>
                     <p>Upload your household waste and get them exchanged with a worthwhile amount from a collector who will ensure a environment friendly recycling.</p>
                     {isLoggedIn ?
-                        <button className="btn" data-hover="Buy / Sell"><div><a href="/sell-buy">Let's Start</a></div></button> :
+                        <button className="btn"><Link to={userObject.userType === "user" ? "/sell" : "/buy"}>Let's Start</Link></button> :
                         <button className="btn" onClick={() => toggleModal()} data-hover="Login / Sign In"><div>Get Started</div></button>
                     }
                 </div>

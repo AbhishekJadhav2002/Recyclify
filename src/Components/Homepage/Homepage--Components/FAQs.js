@@ -1,6 +1,6 @@
 import React from "react"
 import "./Components.Homepage.FAQs.styles.css"
-import { FAQExpandIcon } from "../../Icons"
+import { FAQExpandIcon } from "../../templates/Icons"
 
 function FAQ(props) {
     const faqArray = props.data.map(faqData => (

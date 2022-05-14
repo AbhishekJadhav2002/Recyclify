@@ -1,0 +1,153 @@
+.ordersPage {
+  background-color: rgb(243, 237, 237);
+  text-align: left;
+  --primary-clr: rgb(59, 216, 59);
+}
+
+.green {
+  color: var(--primary-clr);
+}
+
+.ordersPage .cartPage .postsPage button {
+  color: rgb(109, 108, 108);
+}
+
+.orderPage .cartPage .postPage button,
+.orderPage .cartPage .postPage img {
+  cursor: pointer;
+}
+
+.filter-grid {
+  display: -ms-grid;
+  display: -ms-grid;
+  display: grid;
+  margin: 6rem 0;
+  padding: 1rem 0;
+  background-color: white;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.filter-location {
+  height: 1.5rem;
+  width: 8rem;
+  background: none;
+  border: none;
+  border: var(--primary-clr) solid 2px;
+  margin: auto;
+}
+
+.order-grid {
+  color: rgb(121, 121, 121);
+
+  padding: 1rem 0;
+}
+
+.order {
+  margin: 1.5rem 3rem;
+  padding-bottom: 2rem;
+  background-color: white;
+}
+
+.order:hover {
+  transition: all 1s;
+  transform: scale(1.01);
+}
+
+.order-details {
+  margin-left: 1rem;
+}
+
+.grid-3 {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-4 {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.order-img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 5rem;
+}
+
+.order-img-container {
+  text-align: center;
+  /* margin-top: 2.5rem; */
+}
+
+.buy-button,
+.cart-button {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bolder;
+  transition: all 1s;
+  color: rgb(109, 108, 108);
+  border: none;
+  padding: 1rem 1.8rem;
+  width: 12rem;
+  margin: 1rem 0;
+}
+
+.buy-button {
+  border: var(--primary-clr) solid;
+  background-color: white;
+}
+
+.cart-button {
+  border: white solid;
+  background-color: var(--primary-clr);
+  color: white;
+}
+
+.buy-button-container {
+  text-align: center;
+}
+
+.buy-button:hover {
+  background-color: var(--primary-clr);
+  color: white;
+  border: white solid;
+}
+
+.cart-button:hover {
+  background-color: white;
+  color: black;
+  border: var(--primary-clr) solid;
+}
+
+option {
+  background-color: var(--primary-clr);
+  color: white;
+  font-size: 1rem;
+}
+
+select {
+  border: none;
+  border: var(--primary-clr) solid 2px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .grid-4 {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .order-details {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .customer-data h3,
+  .order-details h3 {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+  }
+}
