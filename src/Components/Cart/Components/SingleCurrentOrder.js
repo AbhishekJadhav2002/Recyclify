@@ -1,5 +1,6 @@
 import React from 'react'
 // import { useGlobalContext } from '../../context';
+import "../Components.Cart.styles.css"
 import Img from "../../Orders Page/Components/ireland.jpeg"
 
 function SingleCurrentOrder(props) {
@@ -8,7 +9,7 @@ function SingleCurrentOrder(props) {
 
   return (
     <div>
-      <div className="order">
+      <div className="cart-orders">
         <div className="orderImgContainer">
           <img src={Img} alt="" />
         </div>

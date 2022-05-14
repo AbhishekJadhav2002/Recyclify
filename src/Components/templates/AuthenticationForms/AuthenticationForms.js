@@ -37,7 +37,6 @@ function AuthenticationForms(props) {
                     }
                 })
                 setLoggedInUser(response)
-                console.log(response)
             } catch (error) {
                 toast.update(toastID, { render: error.response.data.msg, type: "fail", isLoading: false })
                 console.log(error)
@@ -51,17 +50,21 @@ function AuthenticationForms(props) {
                 })
                 setTimeout(() => { setLoggedInUser(response) }, 800)
                 toast.update(toastID, { render: "Successfully authenticated !", type: "success", isLoading: false })
-                console.log(response.data)
             } catch (error) {
-                toast.update(toastID, { render: error.response.data.msg, type: "fail", isLoading: false })
+                toast.update(toastID, { render: error.data.msg, type: "fail", isLoading: false })
                 console.log(error)
             }
         }
     }
 
     function handleSubmit(event) {
-        toastID = toast.loading("Authenticating...")
-        postDetailsToAPI()
+        if (signUpDetails.phone.length !== 10 && isSignUp) {
+            alert("Phone no. should be 10 digit !")
+        }
+        else {
+            toastID = toast.loading("Authenticating...")
+            postDetailsToAPI()
+        }
         event.preventDefault();
     }
 

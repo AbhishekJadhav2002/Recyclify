@@ -10,7 +10,14 @@ function Navbar() {
 
     return (
         <React.Fragment>
-            <div className="blur-nav"></div>
+            <div className="blur-nav">
+                {userObject ? <main>
+                    <div className="profile-bar">
+                        <p>{userObject.name}</p>
+                        <button type="submit"><i className="profile-icon"></i></button>
+                    </div>
+                </main> : ''}
+            </div>
             <nav id="navbar">
                 <section className="nav-text">
                     <Link className="link" to="/">Homepage</Link>

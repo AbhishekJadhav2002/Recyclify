@@ -14,15 +14,15 @@ function PageContent(props) {
                             <div className="profile-row">
                                 <div className="profile-card-body-stats">
                                     <div>
-                                        <span className="numbers">20</span>
+                                        <span className="numbers">0</span>
                                         <span className="desc">Orders</span>
                                     </div>
                                     <div>
-                                        <span className="numbers">2</span>
+                                        <span className="numbers">0</span>
                                         <span className="desc">Pending</span>
                                     </div>
                                     <div>
-                                        <span className="numbers">18</span>
+                                        <span className="numbers">0</span>
                                         <span className="desc">Completed</span>
                                     </div>
                                 </div>

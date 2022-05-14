@@ -46,10 +46,9 @@ function Orders() {
               "Content-Type": "application/JSON",
             }
           })
-        userOrders.length === 0 ?? (ordersFetchingToastID = toast.loading("Getting available orders..."))
+        userOrders.length ?? (ordersFetchingToastID = toast.loading("Getting available orders..."))
         updateOrders(userOrders.data)
         toast.update(ordersFetchingToastID, { render: "Let's Recycle !", type: "success", isLoading: false, autoClose: "800" })
-        console.log(userOrders)
       } catch (error) {
         console.log(error)
       }

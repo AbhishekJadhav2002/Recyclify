@@ -1,5 +1,6 @@
 import React from 'react'
 import { useGlobalContext } from "../../Services/context"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import imgUrl from "../Images/recycle.png"
 import { toast, ToastContainer } from "react-toastify";
@@ -8,8 +9,10 @@ import 'react-toastify/dist/ReactToastify.css';
 function PostSection() {
   const { userObject } = useGlobalContext();
 
+  const redirectToHome = useNavigate()
+
   const [order, setOrder] = React.useState({
-    userId: [userObject._id],
+    userID: userObject._id,
     productType: "",
     items: "",
     quantity: "0",
@@ -28,7 +31,7 @@ function PostSection() {
         }
       })
       setTimeout(() => { setOrder(order) }, 800)
-      toast.update(toastID, { render: "Successfully posted order !", type: "success", isLoading: false, autoClose: "800" })
+      response.status === "OK" ? toast.update(toastID, { render: "Successfully posted order !", type: "success", isLoading: false, autoClose: "800" }) : toast.update(toastID, { render: "Failed posting request !", type: "error", isLoading: false, autoClose: "800" })
     } catch (error) {
       console.log(error)
     }
@@ -36,8 +39,27 @@ function PostSection() {
 
   function HandlePostOrder(event) {
     event.preventDefault()
-    toastID = toast.loading("Posting request...")
-    postDetailsToAPI()
+    const validateQuantity = order.quantity
+    var f = true;
+    if (validateQuantity.length === 1 && validateQuantity[0] === '0') {
+      alert("Quantity must be non-zero")
+    }
+    else {
+      for (let i = 0; i < validateQuantity.length; i++) {
+        if (!(validateQuantity[i] >= '0' && validateQuantity[i] <= '9')) {
+          f = false;
+          break;
+        }
+      }
+      if (f === false) {
+        alert("Quantity Must be numeric value")
+      }
+      else {
+        toastID = toast.loading("Posting request...")
+        postDetailsToAPI()
+        setTimeout(() => { redirectToHome("/complete-orders") }, 1000)
+      }
+    }
   }
 
   function onFieldsChange(event) {
@@ -58,7 +80,7 @@ function PostSection() {
           <form onSubmit={HandlePostOrder} >
             <div className="postEle">
               <label className='postLabel' name="productType" htmlFor="">Item-Type</label>
-              <select name="productType" onChange={onFieldsChange} value={order.productType}>
+              <select name="productType" onChange={onFieldsChange} value={order.productType} required>
                 <option value="">Select</option>
                 <option value="Plastic">Plastic</option>
                 <option value="E-Waste">E-Waste</option>
@@ -67,27 +89,27 @@ function PostSection() {
             </div>
             <div className="postEle">
               <label className='postLabel' htmlFor="">Items</label>
-              <input className='postInput' type="text" name="items" onChange={onFieldsChange} value={order.items} />
+              <input className='postInput' type="text" name="items" required onChange={onFieldsChange} value={order.items} />
               <br />
             </div>
             <div className="postEle">
               <label className='postLabel' htmlFor="">Quantity</label>
               <div className="">
-                <input className='postInput quantityInput' type="text" name="quantity" onChange={onFieldsChange} value={order.quantity} /> <select name="type" id="cars">
+                <input className='postInput quantityInput' type="text" name="quantity" required onChange={onFieldsChange} value={order.quantity} /> <select name="type" id="cars">
                   <option value="Kg">Kg</option>
-                  <option value="">Quantity</option>
+                  <option value="">Nos</option>
                 </select>
               </div>
               <br />
             </div>
             <div className="postEle">
-              <label className='postLabel' htmlFor="">Delivery Address</label>
-              <input className='postInput' type="text" name="address" value={order.address} onChange={onFieldsChange} />
+              <label className='postLabel' htmlFor="">Pickup Address</label>
+              <input className='postInput' type="text" name="address" value={order.address} required onChange={onFieldsChange} />
               <br />
             </div>
             <div className="postEle">
               <label className='postLabel' htmlFor="">City</label>
-              <input className='postInput' type="text" name="city" value={order.city} onChange={onFieldsChange} />
+              <input className='postInput' type="text" name="city" value={order.city} required onChange={onFieldsChange} />
               <br />
             </div>
             <div className="postButtonGrid">
