@@ -13,6 +13,7 @@ import PostsPage from "./Components/Post Page/PostsPage"
 import PastOrders from "./Components/Cart/Components/PastOrders"
 import CurrentOrders from "./Components/Cart/Components/CurrentOrders"
 
+
 function App() {
 	const { userObject } = useGlobalContext()
 
