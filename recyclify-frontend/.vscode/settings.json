@@ -1,0 +1,31 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#4D006C",
+    "titleBar.activeBackground": "#6C0097",
+    "titleBar.activeForeground": "#FEFAFF"
+  },
+  "cSpell.ignoreWords": [
+    "accusantium",
+    "adipisicing",
+    "aliquid",
+    "amet",
+    "blanditiis",
+    "consectetur",
+    "corporis",
+    "cupiditate",
+    "dignissimos",
+    "doloribus",
+    "elit",
+    "enim",
+    "itaque",
+    "labore",
+    "nemo",
+    "neque",
+    "odio",
+    "quidem",
+    "ratione",
+    "voluptates"
+  ],
+  "jupyter.jupyterServerType": "local",
+  "cSpell.words": ["rgba"]
+}
