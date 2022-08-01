@@ -1,0 +1,278 @@
+/** AuthenticationForms styles */
+
+.authenticationContainer {
+  position: fixed;
+  bottom: 1.8%;
+  right: 1%;
+  width: 60%;
+  height: 90vh;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9997;
+  background-color: var(--light-blue-7_footer_background);
+  -webkit-box-shadow: -20px 0px 130px -10px var(--pri-green-3_Y2Use) inset;
+  -moz-box-shadow: -20px 0px 130px -10px var(--pri-green-3_Y2Use) inset;
+  box-shadow: -20px 0px 130px -10px var(--pri-green-3_Y2Use) inset;
+  -webkit-backdrop-filter: blur(6px) saturate(180%);
+  backdrop-filter: blur(6px) saturate(180%);
+}
+
+.modalCloseButton {
+  position: fixed;
+  bottom: 1.8%;
+  right: 1%;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+.modalBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: url("./SignUpPageBackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-attachment: fixed;
+  -webkit-filter: saturate(4);
+  -moz-filter: saturate(4);
+  filter: saturate(4);
+  z-index: 9999;
+}
+
+.modal {
+  width: 450px;
+  height: 450px;
+  min-height: 300px;
+  padding: 10%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--light-blue-7_footer_background);
+  -webkit-box-shadow: 0px 0px 10px 20px var(--light-blue-7_footer_background);
+  -moz-box-shadow: 0px 0px 10px 20px var(--light-blue-7_footer_background);
+  box-shadow: 0px 0px 10px 20px var(--light-blue-7_footer_background);
+  z-index: 10000;
+}
+
+.modalForSignUpForm {
+  width: 400px;
+  padding: 20px;
+}
+
+.modalForSignUpForm .box {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.modalForSignUpForm .box .inputBox {
+  width: 46.2%;
+}
+
+#emailContainer {
+  width: 200%;
+}
+
+.modal .heading {
+  line-height: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  background-color: var(--light-blue-4_footer_background);
+  -webkit-backdrop-filter: blur(2px);
+  -moz-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.modal .heading h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+}
+
+.modal .heading span {
+  color: var(--blue-links);
+  cursor: pointer;
+}
+
+.modal .heading p {
+  font-size: 0.9rem;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  min-height: 15.48rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.625rem;
+  padding: 20px 2rem calc(40px + 2rem);
+  border-radius: 20px;
+  background-color: var(--light-blue-7_footer_background);
+  -webkit-backdrop-filter: blur(2px);
+  -moz-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.box .inputBox {
+  position: relative;
+}
+
+.box .inputBox input,
+.box .isUserButton {
+  width: 100%;
+  padding: 0.625rem 10px;
+  font-size: 1rem;
+  letter-spacing: 0.062rem;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-color: var(--pri-green-6_form_fields);
+  caret-color: var(--pri-green-1_form_fields);
+  transition: 0.3s;
+}
+
+.box .inputBox label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 0.52rem 0;
+  font-size: 1rem;
+  color: var(--darkish-gray-8-shadow_stepNo);
+  opacity: 0.8;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.box .inputBox a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 5px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: inherit;
+  letter-spacing: 0.03rem;
+  line-height: 1.4;
+  border-radius: 5px 0 5px 0;
+  background-color: var(--light-blue-1_footer_background);
+  transition: 0.3s;
+}
+
+.box .isUserButton {
+  width: 65%;
+  align-self: end;
+  transition: .3s ease-in-out;
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label,
+.box .inputBox input:not([value=""]) ~ label {
+  top: -1.2rem;
+  left: 10px;
+  padding: 0.4rem 5px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  background-color: var(--light-blue-1_footer_background);
+}
+
+.box .inputBox input:not([value=""]) ~ a {
+  line-height: 1.7;
+  bottom: -14px;
+  border-radius: 0 0 5px 5px;
+  border: 2px solid var(--pri-green-6_form_fields);
+  border-top: none;
+}
+
+.box .inputBox input:focus,
+.box .inputBox input:not([value=""]) {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  border: 2px solid var(--pri-green-6_form_fields);
+}
+
+.box input[type="submit"] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 40px;
+  padding: 0.425rem 1rem;
+  border: 3px solid transparent;
+  border-radius: 0 0 20px 20px;
+  color: var(--darkish-gray-8-shadow_stepNo);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.01rem;
+  background: var(--light-blue_buttons);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.box input[type="submit"]:hover,
+.box .isUser {
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  border: 2px dotted var(--pri-green-8_form_fields);
+}
+
+@media (max-width: 450px) {
+  .authenticationContainer {
+    width: 90%;
+    height: 60%;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .modalCloseButton {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 40px));
+    cursor: col-resize;
+    z-index: 9996;
+  }
+
+  .modalForSignUpForm .modalBackground {
+    background-position: -270px 470%;
+    background-size: 140%;
+  }
+
+  .modalBackground {
+    background-position: -270px 470%;
+    background-size: 120%;
+  }
+
+  .modal {
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+    border-radius: inherit;
+  }
+
+  .modalForSignUpForm .box .inputBox {
+    width: 45.4%;
+  }
+
+  .box {
+    padding: 20px 2rem calc(20px + 2rem);
+  }
+}
+/** AuthenticationForms styles ends */

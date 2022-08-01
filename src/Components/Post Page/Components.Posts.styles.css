@@ -1,0 +1,122 @@
+.postsPage {
+  --primary-clr: rgb(59, 216, 59);
+  color: rgb(109, 108, 108);
+  font-weight: bold;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-img {
+  height: 100vh;
+  width: 100%;
+}
+
+.postButtonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.uploadImage,
+.postButton {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: bolder;
+  transition: all 1s;
+  background-color: white;
+  text-align: center;
+  color: rgb(109, 108, 108);
+  border: none;
+  padding: 1rem 2rem;
+  border: var(--primary-clr) solid;
+}
+
+.postButton {
+  background-color: var(--primary-clr);
+  color: white;
+}
+
+.postButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.uploadImage:hover {
+  background-color: var(--primary-clr);
+  color: white;
+}
+
+.button-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.postEle {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.postLabel {
+  margin-left: 4rem;
+}
+
+.postInput {
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: var(--primary-clr) 3px solid;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bolder;
+  color: rgb(109, 108, 108);
+  width: 15rem;
+}
+
+.quantityInput {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bolder;
+  color: rgb(109, 108, 108);
+  width: 8rem;
+}
+
+select {
+  font-family: "Fira Sans", sans-serif;
+  color: rgb(109, 108, 108);
+  width: 7rem;
+  font-size: 1rem;
+  border: var(--primary-clr) 2px solid;
+  font-weight: bold;
+}
+
+/* .underline{
+  height: 3px;
+  width: 10rem;
+  border-radius: 300rem;
+  background-color: var(--primary-clr);
+  
+} */
+
+@media screen and (max-width: 1000px) {
+  .img-container {
+    display: none;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .uploadImage,
+  .postButton {
+    font-size: 0.8rem;
+  }
+
+  .postEle {
+    font-size: 1.3rem;
+  }
+
+  .postInput {
+    font-size: 1rem;
+  }
+}

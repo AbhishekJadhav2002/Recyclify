@@ -1,0 +1,258 @@
+/** Homepage Header styles */
+
+.homepage {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  max-width: 100%; /* avoiding horizontal scrollbar caused due to above 100vw width */
+}
+
+/** Hero Section starts */
+.header-container {
+  height: 75vh;
+  min-height: 75vh;
+}
+
+.header-background {
+  margin: -8px 0px 0px 0px;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  background-image: url("./Images/Homepage--HeroBackground1.png"),
+    url("./Images/Homepage--HeroBackground2.png");
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: 40%, 55%;
+  background-position: -30% 15%, right bottom;
+  transform: rotate(180deg);
+  opacity: 0.8;
+  -webkit-filter: opacity(0.8) saturate(0.8);
+  filter: opacity(0.8) saturate(0.8);
+  pointer-events: none;
+}
+
+.header-content {
+  position: absolute;
+  left: 0;
+  top: 1%;
+  z-index: 2;
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* gap: 30px 0; */
+  padding: 100px 0 0 60px;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.header-content h1 {
+  width: 100%;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 3em;
+  letter-spacing: 0.25vw;
+  background: url("./Images/header-wave.svg");
+  background-attachment: scroll;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all ease;
+  -webkit-animation: waves 5s ease infinite;
+  animation: waves 5s ease infinite;
+}
+
+@keyframes waves {
+  0% {
+    background-position-y: 24.9%;
+  }
+  50% {
+    background-position-y: 74.9%;
+  }
+  75% {
+    background-position-y: 49.9%;
+  }
+  100% {
+    background-position-y: 24.9%;
+    /* background-position-y: 101%; */
+    /* background-position-x: 1422px; */
+    /* -webkit-transform-origin: 100% 0; */
+    /* transform-origin: 100% 0; */
+  }
+}
+
+.header-content p {
+  width: 70%;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin: 10px 0 50px;
+}
+
+.shopping-img {
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+  left: auto;
+  z-index: 1;
+  width: 60%;
+  height: 80vh;
+  max-height: 600px;
+  background-image: url("./Images/Volunteering-bro.svg");
+  background-repeat: no-repeat;
+  background-size: 80vh;
+  background-position: right 0;
+  pointer-events: none;
+}
+
+.btn {
+  position: relative;
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light-blue-1_footer_background);
+  background: var(--pri-green-6_form_fields);
+  -moz-box-shadow: inset 2px 2px 5px 0px var(--pri-green-6_form_fields),
+    2px 2px 5px 0px var(--pri-green-2_form_fields),
+    2px 2px 5px 0px var(--pri-green-2_form_fields);
+  box-shadow: inset 2px 2px 5px 0px var(--pri-green-6_form_fields),
+    2px 2px 5px 0px var(--pri-green-2_form_fields),
+    2px 2px 5px 0px var(--pri-green-2_form_fields);
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.3s ease;
+  outline: none;
+  overflow: hidden;
+}
+
+.btn:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn:active {
+  top: 2px;
+}
+
+.btn:before {
+  content: attr(data-hover);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  font-weight: 600;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: all 0.4s ease-in-out;
+}
+
+.btn div {
+  transition: all 0.4s ease-in-out;
+}
+/*button div (button text before hover)*/
+.btn:hover div {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+
+.btn:hover:before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Hero Element media queries */
+@media (max-width: 1200px) {
+  .header-background {
+    top: 10%;
+    right: -1%;
+    left: -1%;
+    width: 45%;
+    height: 100%;
+    background-image: url("./Images/Homepage--HeroBackground2.png");
+    background-repeat: no-repeat;
+    /* background-size: calc(80% + 10vh); */
+    background-size: 90%;
+    background-position: 0 100%;
+    transform: rotate(90deg);
+    opacity: 0.8;
+    -webkit-filter: opacity(0.8) saturate(2);
+    filter: opacity(0.8) saturate(2);
+  }
+
+  .header-content {
+    min-width: 100%;
+  }
+
+  .header-content h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 2em;
+    width: 400px;
+  }
+
+  @keyframes waves {
+    0% {
+      background-position-y: 1.9%;
+    }
+    50% {
+      background-position-y: 64.9%;
+    }
+    75% {
+      background-position-y: 20.9%;
+    }
+    100% {
+      background-position-y: 1.9%;
+    }
+  }
+
+  .header-content p {
+    font-size: 1em;
+    width: 70%;
+  }
+
+  .shopping-img {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .header-container {
+    position: relative;
+    min-width: 100%;
+    height: 450px;
+    min-height: 450px;
+  }
+
+  .header-background {
+    width: 100%;
+    height: 375px;
+    min-height: 250px;
+  }
+
+  .header-content {
+    height: 100%;
+  }
+
+  .header-content h1 {
+    width: 100%;
+  }
+}
+/** Hero Element ends */

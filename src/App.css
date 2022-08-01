@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  /* border: 1px solid red; */
+}
+
+:root {
+  --dark-gray-8-shadow_stepNo: rgba(47, 46, 46, 0.8);
+  --light-blue-4_footer_background: rgba(225, 239, 246, 0.4);
+  --darkish-gray_stepNo: rgba(125, 128, 122, 0.5);
+  --light-blue-6-shadow_faqCard: rgba(164, 180, 188, 0.6);
+  --light-blue-7_footer_background: rgba(225, 239, 246, 0.7);
+  --light-blue-1_footer_background: rgba(225, 239, 246, 1);
+  --pri-green-2_form_fields: rgba(0, 255, 64, 0.2);
+  --pri-green-3_Y2Use: rgba(0, 255, 47, 0.3);
+  --pri-green-6_form_fields: rgba(0, 255, 64, 0.6);
+  --sec-dark-green_selection: rgba(104, 241, 74, 0.6);
+  --pri-green-8_form_fields: rgba(0, 255, 64, 0.8);
+  --pri-dark-green_navbar: rgba(59, 148, 94, 0.8);
+  --dark-green-drop-shadow: rgb(52, 200, 111);
+  --pri-green-1_form_fields: rgba(0, 255, 64);
+  --light-green-drop-shadow_footer: rgb(51, 201, 38);
+  --light-blue_buttons: rgba(144, 218, 255, 0.65);
+  --neon-blue_sticks: rgba(0, 255, 255, 1);
+  --blue-links: rgb(17, 91, 251);
+  --dark-blue-links: rgb(94, 114, 228);
+}
+
+*::selection {
+  background-color: var(--sec-dark-green_selection);
+  text-shadow: -2px 2px 3px var(--neon-blue_sticks);
+}
+
+/** Custom Scrollbar Styles starts */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 255, 255) var(--sec-dark-green_selection);
+} /* Scrollbar styling for Firefox */
+
+*::-webkit-scrollbar-track-piece {
+  width: 1px;
+  border-color: transparent;
+  background-color: rgb(51, 201, 38);
+}
+
+*::-webkit-scrollbar {
+  width: 11px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 3px solid rgb(51, 201, 38);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  border: 0;
+}
+/** Custom Scrollbar Styles ends */
+
+/** Global classes */
+.container {
+  position: relative;
+  max-width: 90%;
+  height: auto;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.iconsBar {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconsBar a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.iconsBar svg {
+  font-size: 1.6rem;
+  width: 30px;
+  height: 30px;
+}
+
+.iconsBar svg:hover {
+  transition: all 0.25s ease-in-out;
+  margin-top: -10px;
+  width: 35px;
+  height: 35px;
+}
+
+.iconsGap-20 {
+  gap: 20px;
+}
+
+.iconsBar::after,
+.iconsBar::before {
+  content: "";
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  flex: 1 1;
+  margin: auto;
+}
+
+.iconsBar-black-line::after,
+.iconsBar-black-line::before {
+  border-bottom-color: black;
+}
+
+.iconsBar-white-line::after,
+.iconsBar-white-line::before {
+  border-bottom-color: white;
+}
+
+.titleStick::before,
+.titleStick::after {
+  content: "";
+  position: absolute;
+  top: 2%;
+  background-color: rgb(0, 255, 255);
+}
+
+.titleStick::before {
+  height: 6rem;
+  width: 2px;
+  left: 1.5rem;
+}
+
+.titleStick::after {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  left: 1.2rem;
+}
+
+.willChange {
+  will-change: transform, background-color, opacity, margin-top,
+    background-position-y;
+}
+
+details[open] p,
+details[open] div {
+  animation: sweep 0.5s ease-out;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-top: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 1rem;
+  }
+}
+
+abbr {
+  text-decoration: none;
+}
+/** Global classes ends */

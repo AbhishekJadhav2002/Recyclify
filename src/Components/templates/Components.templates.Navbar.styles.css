@@ -1,0 +1,139 @@
+/** Floating Navbar starts */
+.blur-nav {
+  background-color: rgba(255, 255, 255, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  min-height: 50px;
+  -webkit-backdrop-filter: blur(3px);
+  -moz-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+#navbar .nav-text {
+  position: fixed;
+  width: 600px;
+  margin: -80px 0 0px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 400;
+  z-index: 3;
+  transition: all 0.7s ease;
+}
+
+#navbar .nav-text .link {
+  color: black;
+  flex-direction: row;
+  flex: 1 1 33.33%;
+  text-decoration: dotted;
+  padding-right: 0.2rem;
+  cursor: pointer;
+}
+
+#navbar #trapezoid {
+  position: fixed;
+  width: 100%;
+  margin-top: -43px;
+  text-overflow: clip;
+  border: 80px solid rgba(0, 0, 0, 0);
+  border-top: 0 solid;
+  border-bottom: 80px solid var(--pri-dark-green_navbar);
+  border-radius: 20px 20px 0 0;
+  z-index: 1;
+  -webkit-filter: drop-shadow(0px -5px 8px var(--dark-green-drop-shadow));
+  filter: drop-shadow(0px -5px 8px var(--dark-green-drop-shadow));
+  transform: rotateX(180deg);
+  transition: all 0.7s ease;
+}
+
+.show-menu {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  height: 35px;
+  font-size: 20px;
+  font-weight: 700;
+  transform: rotateX(180deg) translateX(-50%);
+  transition: all 0.5s ease-in-out;
+  transform: perspective(-10px);
+}
+
+#navbar:hover #trapezoid {
+  margin-top: -12px;
+}
+
+#navbar:hover .show-menu {
+  top: -30px;
+}
+
+#navbar:hover .nav-text {
+  margin-top: 15px;
+}
+/* Navbar Media Queries */
+@media (max-width: 1200px) {
+  #navbar {
+    width: 90vw;
+    padding: 0;
+    height: 12vh;
+    pointer-events: none; /*disables hover effect in mobile version */
+  }
+
+  #navbar #trapezoid {
+    border: 40px solid rgba(0, 0, 0, 0);
+    border-bottom: 100px solid var(--pri-dark-green_navbar);
+    margin-top: -50px;
+  }
+
+  #navbar .show-menu {
+    display: none;
+  }
+
+  #navbar .nav-text {
+    width: 70%;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    padding: 5px 0;
+    margin: 0 auto 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #navbar .nav-text a {
+    border: 0;
+    padding-right: 0px;
+    flex: auto;
+    pointer-events: visibleStroke;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #navbar {
+    top: 0;
+    left: calc(100vw - 90vw);
+    transform: translateX(calc(95vw - 100vw));
+  }
+
+  #navbar .nav-text {
+    font-size: 1.4em;
+  }
+}
+/** Floating Navbar ends */
