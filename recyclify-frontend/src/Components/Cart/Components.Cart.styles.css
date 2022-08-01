@@ -1,0 +1,163 @@
+.cartPage {
+  background-color: rgb(243, 237, 237);
+  text-align: left;
+  --primary-clr: rgb(59, 216, 59);
+  --font-clr: rgb(109, 108, 108);
+}
+
+.orderBody {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.2rem;
+  margin: 4% 0 0;
+  height: 100vh;
+  /* background: rgb(195, 238, 195) !important; */
+}
+
+.grid-2 {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-2-fixed {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.order-data {
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.orderImgContainer img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 5rem;
+}
+
+.orderImgContainer {
+  border: solid var(--primary-clr) 1px;
+  border-top: none;
+  border-right: none;
+  text-align: center;
+}
+
+.green {
+  color: var(--primary-clr);
+}
+
+.cart-orders {
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid rgb(59, 216, 59);
+  color: var(--font-clr);
+  background: white;
+}
+
+.orderItems,
+.grid-2,
+.orderPhone,
+.orderDate,
+.orderAddress,
+.DeliveryDate,
+.orderQuantity {
+  margin-top: 1rem;
+}
+
+.button-container {
+  text-align: center;
+  padding: 6rem;
+}
+
+.cartButtons button {
+  height: 3rem;
+  width: 15rem;
+  text-align: center;
+}
+
+.ordersButton,
+.cartButton,
+.historyButton {
+  font-size: 1rem;
+  font-weight: bolder;
+  transition: all 1s;
+  background-color: white;
+  text-align: center;
+  color: rgb(109, 108, 108);
+  border: none;
+  padding: 1rem 2rem;
+  border: var(--primary-clr) solid;
+}
+
+.ordersButton {
+  background-color: var(--primary-clr);
+  color: white;
+}
+
+.cartButton:hover,
+.historyButton:hover {
+  background-color: var(--primary-clr);
+  color: white;
+}
+
+.ordersButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.orderDelete {
+  text-align: center;
+  font-size: 1.3rem;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.delete-btn-container {
+  text-align: center;
+}
+
+.empty-cart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 100%;
+  height: 100%;
+}
+
+.empty-cart-icon {
+  color: var(--primary-clr);
+  font-size: 5rem;
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.empty-cart-text {
+  font-size: 5rem;
+  color: var(--font-clr);
+  font-family: "Akshar", sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .grid-2 {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

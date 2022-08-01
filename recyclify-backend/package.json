@@ -1,0 +1,25 @@
+{
+  "name": "xeniaverse-backend",
+  "version": "1.0.0",
+  "description": "Backend For Xenia-Verse",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "16.14.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.10",
+    "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15"
+  }
+}
