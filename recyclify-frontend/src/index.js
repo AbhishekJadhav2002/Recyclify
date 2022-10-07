@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { AppProvider } from './Components/Services/context';
 import reportWebVitals from './reportWebVitals';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.render(
   <AppProvider >

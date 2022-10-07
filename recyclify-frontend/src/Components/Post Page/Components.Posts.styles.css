@@ -94,10 +94,14 @@ select {
   width: 10rem;
   border-radius: 300rem;
   background-color: var(--primary-clr);
-  
+
 } */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
+  .postsPage {
+    margin: 8vh 0 0;
+  }
+
   .img-container {
     display: none;
   }
@@ -112,11 +116,22 @@ select {
     font-size: 0.8rem;
   }
 
+  .postLabel {
+    margin-left: 0rem;
+    padding: 0 20px;
+  }
+
   .postEle {
     font-size: 1.3rem;
   }
 
   .postInput {
     font-size: 1rem;
+      width: 80%;
+  }
+
+  .postButtonGrid {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

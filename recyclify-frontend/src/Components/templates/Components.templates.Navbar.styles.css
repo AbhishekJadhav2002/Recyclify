@@ -88,11 +88,10 @@ main {
 }
 
 #navbar .nav-text .link {
+  position: relative;
   color: black;
-  flex-direction: row;
   flex: 1 1 33.33%;
-  text-decoration: dotted;
-  padding-right: 0.2rem;
+  padding-right: 0.6rem;
   cursor: pointer;
 }
 
@@ -124,16 +123,18 @@ main {
   transform: perspective(-10px);
 }
 
-#navbar:hover #trapezoid {
-  margin-top: -12px;
-}
+@media (min-width: 1200px) {
+  #navbar:hover #trapezoid {
+    margin-top: -12px;
+  }
 
-#navbar:hover .show-menu {
-  top: -30px;
-}
+  #navbar:hover .show-menu {
+    top: -30px;
+  }
 
-#navbar:hover .nav-text {
-  margin-top: 15px;
+  #navbar:hover .nav-text {
+    margin-top: 15px;
+  }
 }
 /* Navbar Media Queries */
 @media (max-width: 1200px) {
@@ -165,11 +166,34 @@ main {
     justify-content: center;
   }
 
-  #navbar .nav-text a {
+  #navbar .nav-text .link {
+    font-size: 0.8em;
     border: 0;
-    padding-right: 0px;
+    padding: 0 3px;
     flex: auto;
     pointer-events: visibleStroke;
+  }
+
+  #navbar .nav-text .link::after {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: calc(50% + 1px);
+    transform: translateY(-50%);
+    width: 1px;
+    height: 50%;
+    background-color: var(--pri-green-1_form_fields);
+  }
+
+  #navbar .nav-text .link:last-child::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 50%;
+    background-color: var(--pri-green-1_form_fields);
   }
 }
 
@@ -181,7 +205,11 @@ main {
   }
 
   #navbar .nav-text {
-    font-size: 1.4em;
+    font-size: 1em;
+  }
+
+  #navbar .nav-text .link {
+    padding-right: 0;
   }
 }
 /** Floating Navbar ends */

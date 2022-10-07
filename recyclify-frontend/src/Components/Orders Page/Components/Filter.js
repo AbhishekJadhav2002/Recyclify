@@ -6,7 +6,7 @@ function Filter() {
   const { updateFilter } = useGlobalContext();
 
   return (
-    <div>
+    <>
       <div className="filter-grid">
         <button className="filter-location"><FaSearch></FaSearch> In My Locality </button>
         <form>
@@ -20,7 +20,7 @@ function Filter() {
           </select>
         </form>
       </div>
-    </div>
+    </>
   )
 }
 

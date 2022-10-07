@@ -6,9 +6,8 @@ import { GiShoppingCart } from 'react-icons/gi';
 // import { IconContext } from "react-icons"
 import img from "./ireland.jpeg"
 import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 
-function Orders() {
+function Orders(props) {
   const { userObject, orders, updateOrders } = useGlobalContext();
 
   let ordersFetchingToastID;
@@ -48,8 +47,10 @@ function Orders() {
           })
         userOrders.length ?? (ordersFetchingToastID = toast.loading("Getting available orders..."))
         updateOrders(userOrders.data)
+        // userOrders.length > 0 && props.toggleFilter(true)
         toast.update(ordersFetchingToastID, { render: "Let's Recycle !", type: "success", isLoading: false, autoClose: "800" })
       } catch (error) {
+        toast.update(ordersFetchingToastID, { render: error.message, type: "fail", isLoading: false })
         console.log(error)
       }
     }
