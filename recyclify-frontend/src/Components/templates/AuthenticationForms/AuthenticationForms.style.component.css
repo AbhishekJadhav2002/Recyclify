@@ -49,8 +49,7 @@
 }
 
 .modal {
-  width: 450px;
-  height: 450px;
+  width: 500px;
   min-height: 300px;
   padding: 10%;
   border-radius: 50%;
@@ -77,7 +76,7 @@
 }
 
 .modalForSignUpForm .box .inputBox {
-  width: 46.2%;
+  width: 100%;
 }
 
 #emailContainer {
@@ -204,7 +203,7 @@
 }
 
 .box input[type="submit"] {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   right: 0;
   width: 100%;
@@ -230,7 +229,7 @@
   border: 2px dotted var(--pri-green-8_form_fields);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .authenticationContainer {
     width: 90%;
     height: 60%;
@@ -268,7 +267,7 @@
   }
 
   .modalForSignUpForm .box .inputBox {
-    width: 45.4%;
+    width: 100%;
   }
 
   .box {
