@@ -13,16 +13,31 @@ function SingleCurrentOrder(props) {
         <div className="orderImgContainer">
           <img src={Img} alt="" />
         </div>
+       
         <div className="order-data">
+
+        <div className="grid-2">
+
+        <div style={{"paddingRight":"3rem"}}> 
           <div className="orderItems">
             <span className="green"> Items:</span>{items}</div>
           <div className="orderAddress">
             <span className="green"> Address:</span>{address}</div>
           <div className="orderPhone">
+          </div>  
+          </div>
+
+          <div>
+        <div style={{ "paddingTop":"1rem"}}>
             <span className="green"> Phone Number:</span> {phone}</div>
           <div className="orderDate"><span className='green'> Ordered On:</span>{date}</div>
           <div className="orderQuantity"><span className="green">Quantity:</span> {quantity}</div>
+   </div>
+
         </div>
+       
+        </div>
+        
         <div className="delete-btn-container">
         </div>
       </div>
