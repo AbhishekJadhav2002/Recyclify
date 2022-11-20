@@ -1,7 +1,8 @@
 import React from "react"
 import './Components.Orders.styles.css';
-import Orders from './Components/Orders';
 import Filter from './Components/Filter';
+import Orders from './Components/Orders';
+
 
 function OrdersPage() {
   const [displayFilter, setDisplayFilter] = React.useState(false);
