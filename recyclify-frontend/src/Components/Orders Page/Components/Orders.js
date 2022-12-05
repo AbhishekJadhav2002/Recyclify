@@ -16,7 +16,7 @@ function Orders(props) {
   async function buyOrder(id) {
     buyingToastID = toast.loading("Just a moment, placing order...");
     try {
-      await axios.patch("https://sleepy-oasis-89356.herokuapp.com/api/order/ordercomplete", JSON.stringify({
+      await axios.patch("https://recyclify-backend.onrender.com/api/order/ordercomplete", JSON.stringify({
         "id": id,
         "collectorId": userObject._id
       }), {
@@ -38,7 +38,7 @@ function Orders(props) {
     async function getOrdersFromAPI() {
       try {
         const userOrders =
-          await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/order/orderBycity", JSON.stringify({
+          await axios.post("https://recyclify-backend.onrender.com/api/order/orderBycity", JSON.stringify({
             "id": userObject._id
           }), {
             headers: {

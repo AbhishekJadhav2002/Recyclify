@@ -12,7 +12,7 @@ function CurrentOrders() {
     async function getPastOrdersFromAPI() {
       try {
         const userPastOrders =
-          await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/order/completedorders", JSON.stringify({
+          await axios.post("https://recyclify-backend.onrender.com/api/order/completedorders", JSON.stringify({
             "id": userObject._id,
           }), {
             headers: {
@@ -21,7 +21,7 @@ function CurrentOrders() {
           })
         updatePastOrders(userPastOrders.data)
         const userIncompleteOrders =
-          await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/order/incompleteorders", JSON.stringify({
+          await axios.post("https://recyclify-backend.onrender.com/api/order/incompleteorders", JSON.stringify({
             "id": userObject._id,
           }), {
             headers: {

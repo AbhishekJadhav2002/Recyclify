@@ -25,7 +25,7 @@ function PostSection() {
 
   async function postDetailsToAPI() {
     try {
-      const response = await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/order/placeOrder", JSON.stringify(order), {
+      const response = await axios.post("https://recyclify-backend.onrender.com/api/order/placeOrder", JSON.stringify(order), {
         headers: {
           "Content-Type": "application/JSON",
         }

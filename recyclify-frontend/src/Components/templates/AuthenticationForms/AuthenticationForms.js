@@ -31,19 +31,20 @@ function AuthenticationForms(props) {
     async function postDetailsToAPI() {
         if (isSignUp) {
             try {
-                const response = await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/auth/signup", JSON.stringify(signUpDetails), {
+                const response = await axios.post("https://recyclify-backend.onrender.com/api/auth/signup", JSON.stringify(signUpDetails), {
                     headers: {
                         "Content-Type": "application/JSON",
                     }
                 })
+                toast.update(toastID, { render: "Successfully created account !", type: "success", isLoading: false })
                 setLoggedInUser(response)
+                console.log(response)
             } catch (error) {
                 toast.update(toastID, { render: error.response.data.msg, type: "fail", isLoading: false })
-                console.log(error)
             }
         } else {
             try {
-                const response = await axios.post("https://sleepy-oasis-89356.herokuapp.com/api/auth/login", JSON.stringify(loginDetails), {
+                const response = await axios.post("https://recyclify-backend.onrender.com/api/auth/login", JSON.stringify(loginDetails), {
                     headers: {
                         "Content-Type": "application/JSON",
                     }
@@ -51,8 +52,8 @@ function AuthenticationForms(props) {
                 setTimeout(() => { setLoggedInUser(response) }, 800)
                 toast.update(toastID, { render: "Successfully authenticated !", type: "success", isLoading: false })
             } catch (error) {
-                toast.update(toastID, { render: error.data.msg, type: "fail", isLoading: false })
-                console.log(error)
+                toast.update(toastID, { render: error.response.data.msg, type: "fail", isLoading: false })
+                // console.log(error)
             }
         }
     }
@@ -69,7 +70,6 @@ function AuthenticationForms(props) {
     }
 
     function handleInputFields(event) {
-        console.log(event.target.value);
         isSignUp ?
             setSignUpDetails(prevState => {
                 let isUser = signUpDetails.isUser;
@@ -111,7 +111,6 @@ function AuthenticationForms(props) {
             <button className="modalCloseButton" onClick={props.onButtonClick}></button>
             <div className="authenticationContainer">
                 <div className="modalBackground"></div>
-                <ToastContainer />
                 <div className={isSignUp ? "modal modalForSignUpForm" : "modal"}>
                     <div className="heading">
                         <h2>Hey! Welcome to the better place 🙌</h2>
@@ -119,6 +118,7 @@ function AuthenticationForms(props) {
                     </div>
                     {signUpOrLogInForm}
                 </div>
+                <ToastContainer />
             </div>
         </React.Fragment >
     );

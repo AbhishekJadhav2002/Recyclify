@@ -174,4 +174,8 @@ details[open] div {
 abbr {
   text-decoration: none;
 }
+
+.Toastify {
+  z-index: 99999999;
+}
 /** Global classes ends */
