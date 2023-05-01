@@ -1,30 +1,29 @@
 import React from 'react'
 // import { useGlobalContext } from '../../context';
 import "../Components.Cart.styles.css"
-import Img from "../../Orders Page/Components/ireland.jpeg"
 
 function SingleCurrentOrder(props) {
   // const { updateOrders, orders } = useGlobalContext();
-  const { phone, address, quantity, items, date } = props.orders;
+  const { phone, address, quantity, items, date, product_image } = props.orders;
 
   return (
     <div>
       <div className="cart-orders">
         <div className="orderImgContainer">
-          <img src={Img} alt="" />
+          <img src={product_image} alt="product_image" />
         </div>
-       
+
         <div className="order-data">
 
         <div className="grid-2">
 
-        <div style={{"paddingRight":"3rem"}}> 
+        <div style={{"paddingRight":"3rem"}}>
           <div className="orderItems">
             <span className="green"> Items:</span>{items}</div>
           <div className="orderAddress">
             <span className="green"> Address:</span>{address}</div>
           <div className="orderPhone">
-          </div>  
+          </div>
           </div>
 
           <div>
@@ -35,9 +34,9 @@ function SingleCurrentOrder(props) {
    </div>
 
         </div>
-       
+
         </div>
-        
+
         <div className="delete-btn-container">
         </div>
       </div>

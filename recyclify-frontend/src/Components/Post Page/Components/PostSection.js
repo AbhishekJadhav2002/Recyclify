@@ -18,26 +18,33 @@ function PostSection() {
     quantity: "0",
     address: "",
     city: "",
-    phone: userObject.phone
+    phone: userObject.phone,
+    product_image: ""
   })
 
   let toastID;
 
   async function postDetailsToAPI() {
     try {
-      const response = await axios.post("https://recyclify-backend.onrender.com/api/order/placeOrder", JSON.stringify(order), {
+      const formData = new FormData()
+      formData.append("product_image", order.product_image)
+      const tempOrderData = { ...order }
+      delete tempOrderData.product_image
+      formData.append("body", JSON.stringify(tempOrderData))
+      await axios.post("https://recyclify-backend.onrender.com/api/order/placeOrder", formData, {
         headers: {
-          "Content-Type": "application/JSON",
+          "Content-Type": "multipart/form-data",
         }
       })
       setTimeout(() => { setOrder(order) }, 800)
-      response.status === "OK" ? toast.update(toastID, { render: "Successfully posted order !", type: "success", isLoading: false, autoClose: "800" }) : toast.update(toastID, { render: "Failed posting request !", type: "error", isLoading: false, autoClose: "800" })
+       toast.update(toastID, { render: "Successfully posted order !", type: "success", isLoading: false, autoClose: "800" })
     } catch (error) {
+      toast.update(toastID, { render: "Failed posting request !", type: "error", isLoading: false, autoClose: "800" })
       console.log(error)
     }
   }
 
-  function HandlePostOrder(event) {
+  async function HandlePostOrder(event) {
     event.preventDefault()
     const validateQuantity = order.quantity
     var f = true;
@@ -56,7 +63,7 @@ function PostSection() {
       }
       else {
         toastID = toast.loading("Posting request...")
-        postDetailsToAPI()
+        await postDetailsToAPI()
         setTimeout(() => { redirectToHome("/complete-orders") }, 1000)
       }
     }
@@ -66,6 +73,13 @@ function PostSection() {
     setOrder(prevOrder => ({
       ...prevOrder,
       [event.target.name]: event.target.value
+    }))
+  }
+
+  function onImageChange(event) {
+    setOrder(prevOrder => ({
+      ...prevOrder,
+      [event.target.name]: event.target.files[0]
     }))
   }
 
@@ -110,6 +124,11 @@ function PostSection() {
             <div className="postEle">
               <label className='postLabel' htmlFor="">City</label>
               <input className='postInput' type="text" name="city" value={order.city} required onChange={onFieldsChange} />
+              <br />
+            </div>
+            <div className="postEle">
+              <label className='postLabel' htmlFor="">Product Image</label>
+              <input className='postInput' placeholder='Upload Product Image' type="file" name="product_image" required onChange={onImageChange} />
               <br />
             </div>
             <div className="postButtonGrid">

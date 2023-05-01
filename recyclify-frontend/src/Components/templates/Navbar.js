@@ -28,7 +28,8 @@ function Navbar() {
                                 <Link className="link" to="/" onClick={() => { window.location.reload(); logOut() }}>Log Out</Link>
                             </>
                             :
-                            <><Link className="link" to="/buy">Buy</Link> <Link className="link" to="/complete-orders">My Orders</Link>
+                            <>
+                            <Link className="link" to="/buy">Buy</Link>
                                 <Link className="link" to="/profile">Profile</Link>
                                 <Link className="link" to="/" onClick={() => { window.location.reload(); logOut() }}>Log Out</Link>
                             </>

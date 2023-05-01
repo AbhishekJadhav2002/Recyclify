@@ -24,7 +24,7 @@ async function register(req, res) {
       });
 
       const Token = await generateToken(response);
-      res.status(400).json({
+      res.status(200).json({
         Token,
       });
     } catch (error) {
@@ -49,7 +49,7 @@ async function register(req, res) {
         city: record.city,
       });
       const Token = await generateToken(response);
-      return res.status(400).json({
+      return res.status(200).json({
         Token,
       });
     } catch (error) {}

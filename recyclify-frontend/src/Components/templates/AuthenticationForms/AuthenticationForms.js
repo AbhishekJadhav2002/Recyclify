@@ -40,6 +40,7 @@ function AuthenticationForms(props) {
                 setLoggedInUser(response)
                 console.log(response)
             } catch (error) {
+                console.log(error)
                 toast.update(toastID, { render: error.response.data.msg, type: "fail", isLoading: false })
             }
         } else {

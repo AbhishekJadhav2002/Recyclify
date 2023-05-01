@@ -41,13 +41,13 @@
 }
 
 .orderImgContainer img {
-  max-width: 90%;
+  max-width: 200px;
   height: auto;
-  
+
 }
 
 .orderImgContainer {
- text-align: center; 
+ text-align: center;
 }
 
 .green {
@@ -56,7 +56,7 @@
 }
 
 .cart-orders {
-  
+
   margin: 2rem;
   padding: 1rem;
   border: 1px solid rgb(59, 216, 59);
@@ -65,7 +65,7 @@
 }
 
 .cart-orders{
-  
+
  color: #000;
 
  box-shadow: 0 0 3px rgb(59, 216, 59),

@@ -12,18 +12,18 @@ function CurrentOrders() {
     async function getPastOrdersFromAPI() {
       try {
         const userPastOrders =
-          await axios.post("https://recyclify-backend.onrender.com/api/order/completedorders", JSON.stringify({
+          await axios.post("https://recyclify-backend.onrender.com/api/order/completedorders", {
             "id": userObject._id,
-          }), {
+          }, {
             headers: {
               "Content-Type": "application/JSON",
             }
           })
         updatePastOrders(userPastOrders.data)
         const userIncompleteOrders =
-          await axios.post("https://recyclify-backend.onrender.com/api/order/incompleteorders", JSON.stringify({
+          await axios.post("https://recyclify-backend.onrender.com/api/order/incompleteorders", {
             "id": userObject._id,
-          }), {
+          }, {
             headers: {
               "Content-Type": "application/JSON",
             }

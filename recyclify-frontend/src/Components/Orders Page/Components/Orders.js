@@ -16,10 +16,10 @@ function Orders(props) {
   async function buyOrder(id) {
     buyingToastID = toast.loading("Just a moment, placing order...");
     try {
-      await axios.patch("https://recyclify-backend.onrender.com/api/order/ordercomplete", JSON.stringify({
+      await axios.patch("https://recyclify-backend.onrender.com/api/order/ordercomplete", {
         "id": id,
         "collectorId": userObject._id
-      }), {
+      }, {
         headers: {
           "Content-Type": "application/JSON",
         }
@@ -38,9 +38,9 @@ function Orders(props) {
     async function getOrdersFromAPI() {
       try {
         const userOrders =
-          await axios.post("https://recyclify-backend.onrender.com/api/order/orderBycity", JSON.stringify({
+          await axios.post("https://recyclify-backend.onrender.com/api/order/orderBycity", {
             "id": userObject._id
-          }), {
+          }, {
             headers: {
               "Content-Type": "application/JSON",
             }
@@ -68,7 +68,7 @@ function Orders(props) {
                 <div className="order-img-container">
                   <img onClick={(e) => {
                     window.open(e.target.src, '_blank');
-                  }} src={img} className="order-img" alt="logo" />
+                  }} src={val.product_image} className="order-img" alt="logo" />
                 </div>
                 <div className="customer-data">
                   <h3> <span className='green'> Ordered On : </span>{val.date.substring(0, 10)}</h3>
